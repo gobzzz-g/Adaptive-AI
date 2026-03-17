@@ -1,0 +1,113 @@
+2026-03-17 14:35:10,971 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 14:35:43,713 | INFO | agent.base_agent | Running agent with skill=default provider=openai
+2026-03-17 14:45:02,570 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 14:59:54,692 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 15:03:33,072 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 15:13:31,300 | INFO | agent.base_agent | Running agent with skill=content_writer provider=openai
+2026-03-17 15:16:40,375 | INFO | agent.base_agent | Running agent with skill=content_writer provider=openai
+2026-03-17 15:16:41,862 | INFO | agent.base_agent | Running agent with skill=content_writer provider=openai
+2026-03-17 15:16:42,396 | INFO | agent.base_agent | Running agent with skill=content_writer provider=openai
+2026-03-17 15:17:47,159 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 15:18:21,308 | INFO | agent.base_agent | Running agent with skill=content_writer provider=gemini
+2026-03-17 15:18:21,511 | ERROR | main | Unexpected error in /run-agent
+Traceback (most recent call last):
+  File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/google/api_core/grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+  File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+  File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+  File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/grpc/_channel.py", line 438, in result
+    raise self
+  File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+  File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/grpc/_channel.py", line 1173, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+  File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/grpc/_channel.py", line 990, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "API key not valid. Please pass a valid API key."
+	debug_error_string = "UNKNOWN:Error received from peer ipv4:216.239.32.223:443 {grpc_message:"API key not valid. Please pass a valid API key.", grpc_status:3}"
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/gobzz/SNS Square/adaptive-ai-agent-dashboard/backend/main.py", line 95, in run_agent
+    output = await agent.run(payload.user_input, payload.skill)
+  File "/Users/gobzz/SNS Square/adaptive-ai-agent-dashboard/backend/agent/base_agent.py", line 28, in run
+    output = await self.llm.run(prompt)
+  File "/Users/gobzz/SNS Square/adaptive-ai-agent-dashboard/backend/agent/llm.py", line 45, in run
+    return self._call_gemini(prompt).strip()
+  File "/Users/gobzz/SNS Square/adaptive-ai-agent-dashboard/backend/agent/llm.py", line 37, in _call_gemini
+    response = model.generate_content(prompt)
+  File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+  File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+  File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/google/api_core/gapic_v1/method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+  File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+  File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/google/api_core/retry/retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/google/api_core/grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2026-03-17 15:18:45,766 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 15:18:47,720 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 15:18:58,908 | INFO | agent.base_agent | Running agent with skill=content_writer provider=gemini
+2026-03-17 15:20:02,142 | INFO | agent.base_agent | Running agent with skill=content_writer provider=gemini
+2026-03-17 15:29:26,462 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 15:34:47,694 | INFO | agent.base_agent | Running agent with skill=content_writer provider=gemini
+2026-03-17 15:35:17,930 | INFO | agent.base_agent | Running agent with skill=content_writer provider=gemini
+2026-03-17 15:36:49,975 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 15:37:16,626 | INFO | agent.base_agent | Running agent with skill=content_writer provider=gemini
+2026-03-17 15:37:22,182 | INFO | agent.base_agent | Running agent with skill=content_writer provider=gemini
+2026-03-17 15:37:24,370 | INFO | agent.base_agent | Running agent with skill=content_writer provider=gemini
+2026-03-17 15:40:34,579 | INFO | agent.base_agent | Running agent with skill=content_writer provider=gemini
+2026-03-17 15:42:31,134 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 15:42:54,880 | INFO | agent.base_agent | Running agent with skill=content_writer provider=gemini
+2026-03-17 15:43:27,753 | INFO | agent.base_agent | Running agent with skill=content_writer provider=gemini
+2026-03-17 15:43:33,514 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 15:44:01,965 | INFO | agent.base_agent | Running agent with skill=content_writer provider=gemini
+2026-03-17 15:44:57,749 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 15:45:55,172 | INFO | agent.base_agent | Running agent with skill=content_writer provider=gemini
+2026-03-17 15:55:28,732 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 15:55:40,594 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 15:56:55,674 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 16:04:22,490 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 16:04:51,952 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-17 16:06:01,588 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 16:06:27,236 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-17 16:07:52,636 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-17 16:07:52,672 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-17 16:58:07,086 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-17 17:03:14,221 | INFO | main | Adaptive AI Agent backend started
+2026-03-17 17:03:37,410 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-17 17:03:41,697 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-17 17:03:41,698 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-17 17:03:41,699 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-17 17:03:46,021 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-17 17:03:46,023 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-17 17:04:00,762 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-17 17:04:06,458 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-17 17:04:06,459 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-17 17:06:12,078 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-17 17:06:23,445 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-17 17:06:23,449 | INFO | agent.base_agent | Agent run completed for skill=content_writer
