@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import time
+from typing import Optional
+
 import httpx
 from openai import OpenAI
 
@@ -60,21 +63,37 @@ class LLMClient:
             "options": {"temperature": self.settings.temperature},
         }
 
-        try:
-            response = httpx.post(f"{base_url}/api/generate", json=payload, timeout=120)
-            response.raise_for_status()
-            data = response.json()
-            output = (data.get("response") or "").strip()
-            if not output:
-                raise RuntimeError("Ollama returned an empty response")
-            return output
-        except httpx.HTTPStatusError as exc:
-            detail = exc.response.text if exc.response is not None else str(exc)
-            raise RuntimeError(f"Ollama request failed: {detail}") from exc
-        except httpx.HTTPError as exc:
-            raise RuntimeError(f"Ollama connection failed: {exc}") from exc
-        except ValueError as exc:
-            raise RuntimeError("Ollama returned invalid JSON") from exc
+        last_error: Optional[Exception] = None
+        for attempt in range(3):
+            try:
+                response = httpx.post(f"{base_url}/api/generate", json=payload, timeout=120)
+                response.raise_for_status()
+                data = response.json()
+                output = (data.get("response") or "").strip()
+                if not output:
+                    raise RuntimeError("Ollama returned an empty response")
+                return output
+            except httpx.HTTPStatusError as exc:
+                status_code = exc.response.status_code if exc.response is not None else 0
+                detail = exc.response.text if exc.response is not None else str(exc)
+                last_error = RuntimeError(f"Ollama request failed: {detail}")
+                # Retry transient upstream/server errors.
+                if attempt < 2 and status_code >= 500:
+                    time.sleep(1.2 * (attempt + 1))
+                    continue
+                raise last_error from exc
+            except httpx.HTTPError as exc:
+                last_error = RuntimeError(f"Ollama connection failed: {exc}")
+                if attempt < 2:
+                    time.sleep(1.2 * (attempt + 1))
+                    continue
+                raise last_error from exc
+            except ValueError as exc:
+                raise RuntimeError("Ollama returned invalid JSON") from exc
+
+        if last_error is not None:
+            raise last_error
+        raise RuntimeError("Ollama request failed for an unknown reason")
 
     async def run(self, prompt: str) -> str:
         provider = self.settings.llm_provider.lower().strip()

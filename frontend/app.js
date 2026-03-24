@@ -387,6 +387,8 @@ function populateSkillDropdown() {
     skillSelect.value = selectedBefore;
     state.activeSkill = selectedBefore;
   }
+
+  updateDataAnalystFileUpdateSection(skillSelect.value || state.activeSkill || '');
 }
 
 function syncSkillsState(skillNames) {
@@ -459,10 +461,6 @@ function renderSkills(filter = '') {
           ${skill.active ? 'Active' : 'Inactive'}
         </div>
         <div class="skill-actions">
-          <button class="skill-btn ${skill.active ? 'skill-btn-active' : 'skill-btn-activate'}"
-            onclick="activateSkill('${skill.name}')" ${skill.active ? '' : ''}>
-            ${skill.active ? '✓ Active' : 'Activate'}
-          </button>
           <button class="skill-btn skill-btn-delete" onclick="openDeleteModal('${skill.name}')">Delete</button>
         </div>
       </div>
@@ -479,6 +477,7 @@ function activateSkill(skillName) {
     s.active = s.name === skillName;
   });
   populateSkillDropdown();
+  updateDataAnalystFileUpdateSection(skillName);
   renderSkills(state.currentSkillFilter);
   renderAnalyticsTable();
   showToast(`"${skill.name}" is now active`, 'success');
@@ -536,6 +535,15 @@ function getRequiredEl(primaryId, fallbackId = '') {
   return document.getElementById(primaryId) || (fallbackId ? document.getElementById(fallbackId) : null);
 }
 
+function updateDataAnalystFileUpdateSection(selectedSkill = '') {
+  const panel = document.getElementById('data-analyst-file-update');
+  if (!panel) return;
+
+  const shouldShow = selectedSkill.trim().toLowerCase() === 'data_analyst';
+  panel.classList.toggle('hidden', !shouldShow);
+  panel.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
+}
+
 function setAgentStatus(isRunning) {
   const statusPill = document.getElementById('agent-status');
   if (!statusPill) return;
@@ -558,11 +566,40 @@ async function fetchSkills() {
   await refreshSkills();
 }
 
+async function readUploadedFileAsText(file) {
+  const MAX_FILE_CHARS = 60000;
+  const text = await file.text();
+  const trimmed = text.trim();
+
+  // Reject binary-like payloads (e.g., .xlsx) that cannot be analyzed as plain text.
+  const sample = text.slice(0, 2000);
+  let nonPrintable = 0;
+  for (let i = 0; i < sample.length; i += 1) {
+    const code = sample.charCodeAt(i);
+    if (code === 9 || code === 10 || code === 13) continue;
+    if (code < 32 || code === 65533) nonPrintable += 1;
+  }
+  if (sample.length > 0 && (nonPrintable / sample.length) > 0.08) {
+    throw new Error('This file appears to be binary. Please upload CSV or TXT for analysis.');
+  }
+
+  if (!trimmed) {
+    throw new Error('Uploaded file is empty.');
+  }
+
+  if (trimmed.length > MAX_FILE_CHARS) {
+    return `${trimmed.slice(0, MAX_FILE_CHARS)}\n\n[Truncated file content to ${MAX_FILE_CHARS.toLocaleString()} characters.]`;
+  }
+
+  return trimmed;
+}
+
 async function runAgent() {
   if (state.agentRunning) return;
   const inputEl = getRequiredEl('userInput', 'agent-query');
   const skillEl = getRequiredEl('skillSelect', 'skill-select');
   const outputEl = getRequiredEl('output', 'output-messages');
+  const fileInputEl = document.getElementById('data-analyst-file-input');
 
   if (!inputEl || !skillEl || !outputEl) {
     showToast('UI configuration issue', 'error', 'Required playground elements are missing.');
@@ -571,9 +608,28 @@ async function runAgent() {
 
   const query = inputEl.value.trim();
   const skillVal = skillEl.value || state.activeSkill;
+  const selectedFile = fileInputEl?.files?.[0] || null;
 
   if (!query) { showToast('Please enter a query', 'warning', 'The query cannot be empty.'); return; }
   if (!skillVal) { showToast('Select a skill', 'warning', 'Choose a skill before running the agent.'); return; }
+  if (skillVal.trim().toLowerCase() === 'data_analyst' && !selectedFile) {
+    showToast('Upload a file first', 'warning', 'Data Analyst requires a file in the File Update section.');
+    return;
+  }
+
+  let uploadedFilePayload = null;
+  let queryWithFileContext = query;
+  if (selectedFile) {
+    try {
+      const fileContent = await readUploadedFileAsText(selectedFile);
+      uploadedFilePayload = { file_name: selectedFile.name, file_content: fileContent };
+      const queryContextPreview = fileContent.slice(0, 3000);
+      queryWithFileContext = `${query}\n\n[Uploaded file available: ${selectedFile.name}]\nUse the file data below for your analysis.\n${queryContextPreview}`;
+    } catch (error) {
+      showToast('File could not be read', 'error', error.message || 'Please upload a readable text file.');
+      return;
+    }
+  }
 
   state.agentRunning = true;
   setRunButtonState(true);
@@ -589,7 +645,11 @@ async function runAgent() {
     const response = await fetch(`${API_BASE_URL}/run-agent`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ user_input: query, skill: skillVal }),
+      body: JSON.stringify({
+        user_input: queryWithFileContext,
+        skill: skillVal,
+        ...(uploadedFilePayload || {}),
+      }),
     });
 
     const payload = await response.json();
@@ -713,8 +773,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Keep active skill in sync with dropdown selection
   getRequiredEl('skillSelect', 'skill-select')?.addEventListener('change', (e) => {
-    if (!e.target.value) return;
     state.activeSkill = e.target.value;
+    updateDataAnalystFileUpdateSection(state.activeSkill || '');
     state.skills.forEach(s => {
       s.active = s.name === state.activeSkill;
     });
@@ -823,6 +883,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   renderSkills();
   renderAnalyticsTable();
   await fetchSkills();
+  updateDataAnalystFileUpdateSection(state.activeSkill || getRequiredEl('skillSelect', 'skill-select')?.value || '');
   animateCounters();
 
   // Dashboard charts (deferred to ensure canvas is painted)

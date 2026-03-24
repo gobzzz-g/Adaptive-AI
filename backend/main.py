@@ -3,6 +3,7 @@ from __future__ import annotations
 import logging
 from contextlib import asynccontextmanager
 from pathlib import Path
+from typing import Optional
 
 from fastapi import FastAPI, File, HTTPException, Request, UploadFile
 from fastapi.exceptions import RequestValidationError
@@ -66,6 +67,8 @@ agent = BaseAdaptiveAgent(settings, skill_loader)
 class RunAgentRequest(BaseModel):
     user_input: str = Field(..., min_length=1, description="User prompt")
     skill: str = Field(..., min_length=1, description="Skill file name without .md")
+    file_name: Optional[str] = Field(default=None, description="Optional uploaded file name")
+    file_content: Optional[str] = Field(default=None, description="Optional uploaded file content")
 
 
 class RunAgentResponse(BaseModel):
@@ -92,7 +95,12 @@ async def validation_exception_handler(_: Request, exc: RequestValidationError) 
 @app.post("/run-agent", response_model=RunAgentResponse)
 async def run_agent(payload: RunAgentRequest) -> RunAgentResponse:
     try:
-        output = await agent.run(payload.user_input, payload.skill)
+        output = await agent.run(
+            payload.user_input,
+            payload.skill,
+            file_name=payload.file_name,
+            file_content=payload.file_content,
+        )
         return RunAgentResponse(output=output, skill_used=payload.skill)
     except SkillNotFoundError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
