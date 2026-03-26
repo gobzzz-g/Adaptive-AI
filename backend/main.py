@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import re
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Optional
@@ -64,9 +65,80 @@ skill_loader = SkillLoader(settings.skills_dir)
 agent = BaseAdaptiveAgent(settings, skill_loader)
 
 
+OUTPUT_SECTIONS = [
+    "Problem Identified",
+    "Business Impact",
+    "AI Solution",
+    "Implementation Plan",
+    "Expected ROI",
+]
+
+
+def _strip_markdown_headings(text: str) -> str:
+    return re.sub(r"^\s{0,3}#{1,6}\s+", "", text, flags=re.MULTILINE)
+
+
+def _strip_conversational_phrases(text: str) -> str:
+    stripped = re.sub(
+        r"^(sure|certainly|absolutely|of course|i can help(?: with that)?|here(?:'s| is) (?:the answer|what i found))[,\s:!-]*",
+        "",
+        text,
+        flags=re.IGNORECASE | re.MULTILINE,
+    )
+    return re.sub(r"^(let me|i will)\s+", "", stripped, flags=re.IGNORECASE | re.MULTILINE)
+
+
+def format_execution_output(raw_output: str) -> str:
+    normalized = _strip_conversational_phrases(_strip_markdown_headings(raw_output or ""))
+    normalized = normalized.replace("**", "").replace("\r", "").strip()
+
+    section_patterns = {
+        "Problem Identified": re.compile(r"(problem identified|problem statement|challenge|issue)", re.IGNORECASE),
+        "Business Impact": re.compile(r"(business impact|impact|consequence|risk)", re.IGNORECASE),
+        "AI Solution": re.compile(r"(ai solution|solution|recommendation|approach)", re.IGNORECASE),
+        "Implementation Plan": re.compile(r"(implementation plan|execution plan|rollout plan|implementation|next steps)", re.IGNORECASE),
+        "Expected ROI": re.compile(r"(expected roi|roi|return on investment|outcome|value)", re.IGNORECASE),
+    }
+
+    sections: dict[str, list[str]] = {title: [] for title in OUTPUT_SECTIONS}
+    current_section = "Problem Identified"
+
+    for raw_line in normalized.split("\n"):
+        cleaned = re.sub(r"^[-*•]\s*", "", raw_line.strip())
+        if not cleaned:
+            continue
+
+        matched_title = None
+        for title in OUTPUT_SECTIONS:
+            if section_patterns[title].search(cleaned):
+                matched_title = title
+                break
+
+        if matched_title:
+            current_section = matched_title
+            remainder = section_patterns[matched_title].sub("", cleaned)
+            remainder = re.sub(r"^\s*[:\-]\s*", "", remainder).strip()
+            if remainder:
+                sections[current_section].append(remainder)
+            continue
+
+        sections[current_section].append(cleaned)
+
+    formatted_blocks = []
+    for title in OUTPUT_SECTIONS:
+        body = " ".join(sections[title]).strip()
+        body = re.sub(r"\s+", " ", body)
+        safe_body = body or "Not explicitly provided in the model response."
+        formatted_blocks.append(f"• {title}\n- {safe_body}")
+
+    return "\n\n".join(formatted_blocks)
+
+
 class RunAgentRequest(BaseModel):
-    user_input: str = Field(..., min_length=1, description="User prompt")
-    skill: str = Field(..., min_length=1, description="Skill file name without .md")
+    task: Optional[str] = Field(default=None, min_length=1, description="Task request")
+    agent: Optional[str] = Field(default=None, min_length=1, description="Agent module name")
+    user_input: Optional[str] = Field(default=None, min_length=1, description="Legacy alias for task request")
+    skill: Optional[str] = Field(default=None, min_length=1, description="Legacy alias for agent module")
     file_name: Optional[str] = Field(default=None, description="Optional uploaded file name")
     file_content: Optional[str] = Field(default=None, description="Optional uploaded file content")
 
@@ -95,13 +167,21 @@ async def validation_exception_handler(_: Request, exc: RequestValidationError) 
 @app.post("/run-agent", response_model=RunAgentResponse)
 async def run_agent(payload: RunAgentRequest) -> RunAgentResponse:
     try:
+        task_request = (payload.task or payload.user_input or "").strip()
+        selected_agent = (payload.agent or payload.skill or "").strip()
+
+        if not task_request:
+            raise ValueError("Task request is required")
+        if not selected_agent:
+            raise ValueError("Agent selection is required")
+
         output = await agent.run(
-            payload.user_input,
-            payload.skill,
+            task_request,
+            selected_agent,
             file_name=payload.file_name,
             file_content=payload.file_content,
         )
-        return RunAgentResponse(output=output, skill_used=payload.skill)
+        return RunAgentResponse(output=format_execution_output(output), skill_used=selected_agent)
     except SkillNotFoundError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
     except InvalidSkillError as exc:

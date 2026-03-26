@@ -8,7 +8,13 @@ class InvalidSkillError(ValueError):
 
 
 class SkillValidator:
-    REQUIRED_SECTIONS = ["objective", "skills", "process", "output format"]
+    REQUIRED_SECTIONS = ["objective", "skills", "process", "output format", "rules"]
+    REQUIRED_RULE_LINES = [
+        "only perform the defined task",
+        "do not explain anything extra",
+        "keep output minimal and structured",
+        "this task is outside my role.",
+    ]
     INJECTION_PATTERNS = [
         r"ignore\s+(all\s+)?previous\s+instructions",
         r"reveal\s+(your\s+)?system\s+prompt",
@@ -30,7 +36,26 @@ class SkillValidator:
         if "# agent role" not in lowered:
             errors.append("Missing required top heading: Agent Role")
 
+        rules_section = cls._extract_rules_section(lowered)
+        if not rules_section:
+            errors.append("Missing content under Rules section")
+        else:
+            for rule_line in cls.REQUIRED_RULE_LINES:
+                if rule_line not in rules_section:
+                    errors.append(f"Rules section missing required rule: {rule_line}")
+
         return len(errors) == 0, errors
+
+    @staticmethod
+    def _extract_rules_section(skill_content_lower: str) -> str:
+        match = re.search(
+            r"^##\s+rules\s*$([\s\S]*?)(?:^##\s+|\Z)",
+            skill_content_lower,
+            flags=re.MULTILINE,
+        )
+        if not match:
+            return ""
+        return match.group(1).strip()
 
     @classmethod
     def ensure_valid_skill(cls, skill_content: str) -> None:

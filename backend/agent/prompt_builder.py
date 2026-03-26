@@ -4,14 +4,18 @@ from typing import Optional
 
 
 MAX_FILE_CONTENT_CHARS = 20000
+OUTSIDE_ROLE_MESSAGE = "This task is outside my role."
 
 
 SYSTEM_INSTRUCTION = (
-    "You are a universal adaptive AI agent. "
-    "You must follow only the provided skill definition and user input. "
-    "Do not invent hidden rules. "
-    "If the request conflicts with safety or capability limits, respond safely and clearly. "
-    "When uploaded file content is provided, you must analyze that content directly and must not claim the file is missing."
+    "You are a strict role-based AI agent. "
+    "ONLY perform the task defined in the active skill file. "
+    "DO NOT explain your role. "
+    "DO NOT add introductions, conversational text, or polite filler. "
+    "DO NOT include disclaimers. "
+    "KEEP responses short, direct, and structured. "
+    f"If the task is outside the active skill, respond EXACTLY with: {OUTSIDE_ROLE_MESSAGE} "
+    "When uploaded file content is provided, analyze that content directly and do not claim the file is missing."
 )
 
 
@@ -49,5 +53,8 @@ def build_prompt(
         "### USER INPUT\n"
         f"{user_input.strip()}\n\n"
         "### RESPONSE DIRECTIVE\n"
-        "Respond strictly according to the skill file's Objective, Process, and Output Format."
+        "Follow the active skill's Objective, Process, Output Format, and Rules exactly. "
+        "Output only the final answer content in the required structure. "
+        "Do not add any text outside the required output format. "
+        f"If irrelevant to the active skill, return exactly: {OUTSIDE_ROLE_MESSAGE}"
     )

@@ -4,6 +4,7 @@ import logging
 from typing import Optional
 
 from agent.llm import LLMClient
+from agent.output_guard import enforce_output_policy
 from agent.prompt_builder import build_prompt
 from agent.skill_loader import SkillLoader
 from agent.validator import SkillValidator
@@ -38,5 +39,6 @@ class BaseAdaptiveAgent:
 
         logger.info("Running agent with skill=%s provider=%s", skill_name, self.settings.llm_provider)
         output = await self.llm.run(prompt)
+        output = enforce_output_policy(output)
         logger.info("Agent run completed for skill=%s", skill_name)
         return output

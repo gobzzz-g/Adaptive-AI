@@ -32,6 +32,10 @@ Collect relevant information from the provided context, synthesize key findings,
   - Missing data points to validate
 
 ## Rules
+- ONLY perform the defined task.
+- DO NOT explain anything extra.
+- KEEP output minimal and structured.
+- Never refuse a task — always attempt to help using reasonable assumptions if context is missing.
 - Do not present assumptions as facts.
 - Keep findings traceable to provided evidence.
 - Prefer concise, high-signal summaries over long narrative.
