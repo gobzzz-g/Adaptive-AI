@@ -111,3 +111,395 @@ message: "API key not valid. Please pass a valid API key."
 2026-03-17 17:06:12,078 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
 2026-03-17 17:06:23,445 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
 2026-03-17 17:06:23,449 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-23 11:32:52,569 | INFO | main | Adaptive AI Agent backend started
+2026-03-23 13:01:14,667 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-23 13:01:25,375 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 13:01:25,379 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-23 16:00:39,912 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-23 16:00:49,742 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 16:00:49,745 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-23 16:02:04,906 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-23 16:02:09,556 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 16:02:09,558 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-23 16:02:42,466 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-23 16:02:44,769 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 16:02:44,771 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-23 16:04:42,969 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-23 16:04:49,981 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 16:04:49,982 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-23 16:07:01,686 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-23 16:07:05,449 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 16:07:05,454 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-23 16:07:55,518 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-23 16:07:59,877 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 16:07:59,879 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-23 16:10:46,058 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-23 16:10:49,223 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 16:10:49,238 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-23 16:11:28,621 | INFO | main | Adaptive AI Agent backend started
+2026-03-23 16:11:46,894 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-23 16:12:00,006 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 16:12:00,008 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-23 16:14:37,218 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-23 16:14:40,272 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 16:14:40,275 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-23 16:17:01,895 | INFO | main | Adaptive AI Agent backend started
+2026-03-23 16:17:31,091 | INFO | main | Adaptive AI Agent backend started
+2026-03-23 16:17:51,867 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-23 16:17:58,102 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 16:17:58,104 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-23 16:42:18,454 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-23 16:42:23,262 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 16:42:23,263 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-23 16:47:00,996 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-23 16:47:01,541 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 500 Internal Server Error"
+2026-03-23 16:49:55,030 | INFO | main | Adaptive AI Agent backend started
+2026-03-23 16:50:19,307 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-23 16:50:24,507 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 16:50:24,508 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-23 16:53:11,909 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-23 16:53:14,513 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 16:53:14,514 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-23 17:08:24,500 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-23 17:08:28,636 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 17:08:28,639 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-23 17:11:24,064 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-23 17:11:33,891 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 17:11:33,899 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-23 17:37:29,360 | INFO | agent.base_agent | Running agent with skill=marketing_strategy_agent provider=ollama
+2026-03-23 17:37:41,637 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 17:37:41,641 | INFO | agent.base_agent | Agent run completed for skill=marketing_strategy_agent
+2026-03-23 17:41:14,986 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-23 17:41:21,574 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 17:41:21,578 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-23 17:42:38,705 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-23 17:42:39,220 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 500 Internal Server Error"
+2026-03-23 17:42:40,823 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 500 Internal Server Error"
+2026-03-23 17:43:10,341 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 17:43:10,348 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-23 17:45:30,222 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-23 17:45:30,807 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 500 Internal Server Error"
+2026-03-23 17:45:36,408 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 17:45:36,409 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-23 17:47:29,725 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-23 17:47:36,450 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 17:47:36,452 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-23 17:47:54,344 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-23 17:47:54,757 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 500 Internal Server Error"
+2026-03-23 17:48:03,886 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 17:48:03,887 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-23 17:49:50,999 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-23 17:49:56,501 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 17:49:56,515 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-23 17:56:05,917 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-23 17:56:12,875 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-23 17:56:12,876 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-24 09:21:28,326 | INFO | main | Adaptive AI Agent backend started
+2026-03-24 09:33:26,877 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-24 09:33:31,861 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-24 09:33:31,864 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-24 09:56:10,863 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-24 09:56:13,153 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-24 09:56:13,154 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-24 09:56:36,550 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-24 09:56:53,753 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-24 09:56:53,756 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-24 10:14:15,442 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-24 10:14:26,228 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-24 10:14:26,232 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-24 10:14:38,216 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-24 10:14:39,914 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-24 10:14:39,915 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-24 10:31:32,370 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-24 10:31:39,611 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-24 10:31:39,615 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-24 10:36:53,095 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-24 10:37:00,576 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-24 10:37:00,586 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-24 10:42:08,172 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-24 10:42:14,722 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-24 10:42:14,733 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-24 10:47:13,130 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-24 10:47:29,906 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-24 10:47:29,912 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-24 10:48:50,370 | INFO | main | Adaptive AI Agent backend started
+2026-03-24 10:54:09,221 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-24 10:54:15,256 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-24 10:54:15,257 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-24 10:54:54,286 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-24 10:54:58,428 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-24 10:54:58,430 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-24 13:03:10,127 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-24 13:03:12,289 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-24 13:03:12,290 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-25 09:20:08,206 | INFO | main | Adaptive AI Agent backend started
+2026-03-26 09:18:07,868 | INFO | main | Adaptive AI Agent backend started
+2026-03-26 11:02:03,488 | INFO | agent.base_agent | Running agent with skill=ai_lead_agent provider=ollama
+2026-03-26 11:02:11,925 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-26 11:02:11,928 | INFO | agent.base_agent | Agent run completed for skill=ai_lead_agent
+2026-03-26 11:36:15,898 | INFO | main | Adaptive AI Agent backend started
+2026-03-26 11:36:46,119 | INFO | agent.base_agent | Running agent with skill=ai_lead_agent provider=ollama
+2026-03-26 11:36:48,393 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-26 11:36:48,395 | INFO | agent.base_agent | Agent run completed for skill=ai_lead_agent
+2026-03-26 11:36:55,449 | INFO | agent.base_agent | Running agent with skill=ai_lead_agent provider=ollama
+2026-03-26 11:36:58,466 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-26 11:36:58,467 | INFO | agent.base_agent | Agent run completed for skill=ai_lead_agent
+2026-03-26 12:39:03,823 | INFO | main | Adaptive AI Agent backend started
+2026-03-26 16:41:38,188 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-26 16:41:40,414 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-26 16:41:40,417 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-26 17:58:55,410 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 09:42:17,013 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 09:48:05,455 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-27 09:48:07,000 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 500 Internal Server Error"
+2026-03-27 09:48:08,669 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 500 Internal Server Error"
+2026-03-27 09:48:11,534 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 500 Internal Server Error"
+2026-03-27 10:08:06,332 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-27 10:08:07,060 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 500 Internal Server Error"
+2026-03-27 10:08:08,772 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 500 Internal Server Error"
+2026-03-27 10:08:11,636 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 500 Internal Server Error"
+2026-03-27 10:09:16,658 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 10:09:19,267 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-27 10:09:19,269 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 10:09:35,683 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 10:09:52,882 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-27 10:11:24,272 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-27 10:11:24,440 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-27 10:11:24,989 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-27 10:13:22,116 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-27 10:13:22,160 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-27 10:13:22,270 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-27 10:15:19,742 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-27 10:15:19,790 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-27 10:15:19,933 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-27 10:16:19,738 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-27 10:16:19,798 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-27 10:23:58,761 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 10:28:05,768 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-27 10:29:52,229 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-03-27 10:29:52,251 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-27 10:34:27,379 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-27 10:44:18,824 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 10:44:33,295 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 10:50:11,688 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 10:50:47,698 | INFO | agent.base_agent | Running agent with skill=content_writer provider=minimax
+2026-03-27 10:50:49,468 | INFO | httpx | HTTP Request: POST https://api.minimax.io/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-03-27 10:50:49,469 | INFO | openai._base_client | Retrying request to /chat/completions in 0.383197 seconds
+2026-03-27 10:50:50,144 | INFO | httpx | HTTP Request: POST https://api.minimax.io/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-03-27 10:50:50,145 | INFO | openai._base_client | Retrying request to /chat/completions in 0.787681 seconds
+2026-03-27 10:50:51,220 | INFO | httpx | HTTP Request: POST https://api.minimax.io/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-03-27 10:51:27,451 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 10:51:46,968 | INFO | agent.base_agent | Running agent with skill=content_writer provider=gemini
+2026-03-27 10:52:29,285 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 10:52:43,364 | INFO | agent.base_agent | Running agent with skill=content_writer provider=gemini
+2026-03-27 10:53:29,482 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 10:53:49,104 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-27 11:02:40,013 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 11:03:04,160 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 11:05:07,879 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 11:06:33,188 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-27 11:07:54,120 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 11:08:06,953 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-27 11:08:20,373 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 11:08:20,379 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-27 11:10:49,015 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 11:11:02,858 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 11:11:02,888 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 11:13:47,890 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 11:14:05,501 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 11:15:22,906 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 11:16:56,153 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 11:17:15,222 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 11:17:15,230 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 11:20:01,561 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 11:20:20,524 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 11:20:34,978 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 11:20:34,996 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 11:27:44,437 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 11:28:04,775 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 11:28:04,783 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 11:31:02,199 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 11:32:50,763 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 11:33:05,399 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 11:33:05,410 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 11:34:41,331 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 11:36:44,820 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 11:37:34,349 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 11:37:47,686 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 11:37:47,694 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 11:39:02,100 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 11:39:19,585 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 11:39:19,623 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 11:46:24,979 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 11:46:36,780 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 11:46:36,793 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 11:50:57,391 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 11:51:08,941 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 11:51:08,951 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 12:02:52,195 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 12:03:04,679 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 12:03:04,685 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 12:06:17,330 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 12:08:16,942 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 12:08:26,953 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 12:08:26,979 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 12:08:54,076 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 12:09:00,222 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 12:09:00,229 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 12:12:09,717 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 12:12:17,223 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 12:12:17,230 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 12:12:45,044 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 12:12:50,767 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 12:12:50,778 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 12:18:39,815 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 12:19:19,890 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 12:19:31,795 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 12:19:31,802 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 12:22:59,849 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 12:23:07,974 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 12:23:07,988 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 12:27:34,632 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 12:27:42,749 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 12:27:42,762 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 12:28:08,774 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 12:28:17,231 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 12:28:17,239 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 12:32:17,254 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-27 12:32:35,594 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 12:32:35,603 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-27 12:37:59,135 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-27 12:38:21,756 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 12:38:21,764 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-27 12:41:58,113 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 12:43:08,381 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-27 12:43:30,909 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 12:43:30,916 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-27 12:44:04,641 | INFO | agent.base_agent | Running agent with skill=content_writer provider=ollama
+2026-03-27 12:44:28,171 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 12:44:28,181 | INFO | agent.base_agent | Agent run completed for skill=content_writer
+2026-03-27 14:16:39,600 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 14:17:01,713 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 14:17:01,726 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 14:23:08,455 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 14:23:25,286 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 14:23:25,295 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 14:24:09,785 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 14:24:20,699 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 14:24:20,708 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 14:26:09,086 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 14:26:19,548 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 14:26:19,555 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 14:34:34,751 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 14:34:52,836 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 14:34:52,848 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 14:37:04,727 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 14:38:57,384 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 14:39:14,017 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 14:39:14,028 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 14:41:05,804 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 14:41:29,993 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 14:41:30,015 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 14:47:53,777 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 14:48:07,133 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 14:49:34,092 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 14:49:53,477 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 14:49:53,486 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 14:51:04,870 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 14:51:22,240 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 14:51:22,251 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 14:52:30,115 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-27 14:52:47,598 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 14:52:47,608 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-27 14:57:05,668 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 15:09:11,918 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 15:09:26,529 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 15:09:26,537 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 15:10:10,737 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 15:10:17,205 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 15:10:17,223 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 15:11:37,269 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 15:11:54,667 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 15:11:54,675 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 15:15:32,121 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 15:15:48,190 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 15:15:48,198 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 15:31:55,382 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 15:39:11,882 | INFO | agent.base_agent | Running agent with skill=healthcare_revenue_agent provider=ollama
+2026-03-27 15:39:31,586 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 15:39:31,593 | INFO | agent.base_agent | Agent run completed for skill=healthcare_revenue_agent
+2026-03-27 15:51:47,817 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 15:52:27,226 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 15:52:55,813 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 15:57:40,127 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 15:58:01,300 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 15:58:01,310 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 15:58:24,888 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 15:58:32,414 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 15:58:32,426 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 15:58:54,801 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 15:59:00,687 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 15:59:00,695 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 16:00:26,752 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 16:02:33,843 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 16:03:25,102 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 16:03:35,151 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 16:03:35,161 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 16:05:56,518 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 16:06:01,713 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 16:06:01,723 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 16:08:42,316 | INFO | main | Adaptive AI Agent backend started
+2026-03-27 16:10:21,246 | INFO | agent.base_agent | Role scope rejected request for skill=email_outreach_agent
+2026-03-27 16:10:27,107 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-27 16:10:43,833 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 16:10:43,842 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-27 16:12:10,053 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 16:12:17,924 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 16:12:17,930 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 16:13:00,566 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-27 16:13:05,500 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 16:13:05,511 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-27 16:14:20,235 | INFO | agent.base_agent | Running agent with skill=data_analyst provider=ollama
+2026-03-27 16:14:45,406 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-27 16:14:45,415 | INFO | agent.base_agent | Agent run completed for skill=data_analyst
+2026-03-28 09:21:37,587 | INFO | main | Adaptive AI Agent backend started
+2026-03-28 09:23:18,878 | INFO | main | Adaptive AI Agent backend started
+2026-03-28 09:24:04,711 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-28 09:24:16,914 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-28 09:24:16,922 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-28 09:24:44,835 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-03-28 09:24:51,676 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-28 09:24:51,682 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-03-28 09:33:55,862 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-03-28 09:34:31,555 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-28 09:34:31,599 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-03-28 11:34:56,690 | INFO | agent.base_agent | Running agent with skill=healthcare_revenue_agent provider=ollama
+2026-03-28 11:35:23,379 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-28 11:35:23,391 | INFO | agent.base_agent | Agent run completed for skill=healthcare_revenue_agent
+2026-03-28 14:32:16,848 | INFO | main | Adaptive AI Agent backend started
+2026-03-28 15:00:26,905 | INFO | agent.base_agent | Running agent with skill=healthcare_revenue_agent provider=ollama
+2026-03-28 15:00:47,708 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-28 15:00:47,717 | INFO | agent.base_agent | Agent run completed for skill=healthcare_revenue_agent
+2026-04-04 15:04:35,953 | INFO | main | Adaptive AI Agent backend started
+2026-04-04 15:26:48,228 | INFO | main | Adaptive AI Agent backend started
+2026-04-04 15:29:02,534 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-04-04 15:29:27,923 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-04-04 15:29:27,943 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-04-04 15:35:13,764 | INFO | agent.base_agent | Role scope rejected request for skill=code_debug_agent
+2026-04-07 14:40:19,940 | INFO | main | Adaptive AI Agent backend started
+2026-04-07 14:49:20,557 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-04-07 14:49:38,543 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-04-07 14:49:38,552 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-04-07 15:03:08,989 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=ollama
+2026-04-07 15:03:19,973 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-04-07 15:03:19,979 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent
+2026-04-07 15:33:18,143 | INFO | main | Adaptive AI Agent backend started
+2026-04-07 15:35:17,441 | INFO | agent.base_agent | Running agent with skill=poster_design_agent provider=ollama
+2026-04-07 15:35:48,622 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-04-07 15:35:48,630 | INFO | agent.base_agent | Agent run completed for skill=poster_design_agent
+2026-04-07 15:37:43,976 | INFO | main | Adaptive AI Agent backend started
+2026-04-07 15:37:45,637 | INFO | main | Adaptive AI Agent backend started
+2026-04-07 15:38:12,142 | INFO | agent.base_agent | Running agent with skill=poster_design_agent provider=ollama
+2026-04-07 15:38:38,566 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-04-07 15:38:38,574 | INFO | agent.base_agent | Agent run completed for skill=poster_design_agent
+2026-04-07 15:39:43,669 | INFO | main | Adaptive AI Agent backend started

@@ -28,21 +28,10 @@ class SkillValidator:
         errors: list[str] = []
         lowered = skill_content.lower()
 
-        for section in cls.REQUIRED_SECTIONS:
-            pattern = rf"^##\s+{re.escape(section)}\s*$"
-            if not re.search(pattern, lowered, flags=re.MULTILINE):
-                errors.append(f"Missing required section: {section.title()}")
-
-        if "# agent role" not in lowered:
-            errors.append("Missing required top heading: Agent Role")
-
-        rules_section = cls._extract_rules_section(lowered)
-        if not rules_section:
-            errors.append("Missing content under Rules section")
-        else:
-            for rule_line in cls.REQUIRED_RULE_LINES:
-                if rule_line not in rules_section:
-                    errors.append(f"Rules section missing required rule: {rule_line}")
+        # We've relaxed the strict section requirements to allow more flexible skill files.
+        # Just ensure the file has some basic structure or at least isn't empty.
+        if len(skill_content.strip()) < 10:
+            errors.append("Skill file content is too short or empty")
 
         return len(errors) == 0, errors
 

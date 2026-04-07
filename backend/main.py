@@ -65,73 +65,18 @@ skill_loader = SkillLoader(settings.skills_dir)
 agent = BaseAdaptiveAgent(settings, skill_loader)
 
 
-OUTPUT_SECTIONS = [
-    "Problem Identified",
-    "Business Impact",
-    "AI Solution",
-    "Implementation Plan",
-    "Expected ROI",
-]
-
-
-def _strip_markdown_headings(text: str) -> str:
-    return re.sub(r"^\s{0,3}#{1,6}\s+", "", text, flags=re.MULTILINE)
-
-
-def _strip_conversational_phrases(text: str) -> str:
-    stripped = re.sub(
-        r"^(sure|certainly|absolutely|of course|i can help(?: with that)?|here(?:'s| is) (?:the answer|what i found))[,\s:!-]*",
-        "",
-        text,
-        flags=re.IGNORECASE | re.MULTILINE,
-    )
-    return re.sub(r"^(let me|i will)\s+", "", stripped, flags=re.IGNORECASE | re.MULTILINE)
 
 
 def format_execution_output(raw_output: str) -> str:
-    normalized = _strip_conversational_phrases(_strip_markdown_headings(raw_output or ""))
-    normalized = normalized.replace("**", "").replace("\r", "").strip()
-
-    section_patterns = {
-        "Problem Identified": re.compile(r"(problem identified|problem statement|challenge|issue)", re.IGNORECASE),
-        "Business Impact": re.compile(r"(business impact|impact|consequence|risk)", re.IGNORECASE),
-        "AI Solution": re.compile(r"(ai solution|solution|recommendation|approach)", re.IGNORECASE),
-        "Implementation Plan": re.compile(r"(implementation plan|execution plan|rollout plan|implementation|next steps)", re.IGNORECASE),
-        "Expected ROI": re.compile(r"(expected roi|roi|return on investment|outcome|value)", re.IGNORECASE),
-    }
-
-    sections: dict[str, list[str]] = {title: [] for title in OUTPUT_SECTIONS}
-    current_section = "Problem Identified"
-
-    for raw_line in normalized.split("\n"):
-        cleaned = re.sub(r"^[-*•]\s*", "", raw_line.strip())
-        if not cleaned:
-            continue
-
-        matched_title = None
-        for title in OUTPUT_SECTIONS:
-            if section_patterns[title].search(cleaned):
-                matched_title = title
-                break
-
-        if matched_title:
-            current_section = matched_title
-            remainder = section_patterns[matched_title].sub("", cleaned)
-            remainder = re.sub(r"^\s*[:\-]\s*", "", remainder).strip()
-            if remainder:
-                sections[current_section].append(remainder)
-            continue
-
-        sections[current_section].append(cleaned)
-
-    formatted_blocks = []
-    for title in OUTPUT_SECTIONS:
-        body = " ".join(sections[title]).strip()
-        body = re.sub(r"\s+", " ", body)
-        safe_body = body or "Not explicitly provided in the model response."
-        formatted_blocks.append(f"• {title}\n- {safe_body}")
-
-    return "\n\n".join(formatted_blocks)
+    """Pass through the model's natural output after stripping conversational filler."""
+    if not raw_output:
+        return "No output was generated."
+    text = raw_output.replace("\r", "").strip()
+    text = re.sub(
+        r"(?i)^(sure[,!.\s]+|certainly[,!.\s]+|absolutely[,!.\s]+|of course[,!.\s]+|let me |i will )",
+        "", text,
+    ).strip()
+    return re.sub(r"\n{3,}", "\n\n", text).strip()
 
 
 class RunAgentRequest(BaseModel):
