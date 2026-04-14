@@ -34,7 +34,12 @@ SYSTEM_INSTRUCTION = (
 EMAIL_AGENTS = {"email_outreach_agent"}
 
 # Skills that supply their own full system prompt
-CUSTOM_SYSTEM_PROMPT_SKILLS = {"healthcare_report_simplifier"}
+# These agents receive the .md content as the system message, not injected into user message.
+# The document content is passed as the user message only.
+CUSTOM_SYSTEM_PROMPT_SKILLS = {
+    "healthcare_report_simplifier",
+    "medical_report_simplifier",
+}
 
 EMAIL_SYSTEM_INSTRUCTION = (
     "You are a professional business email writer. "

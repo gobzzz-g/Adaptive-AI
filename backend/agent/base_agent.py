@@ -14,6 +14,12 @@ from config.settings import Settings
 
 logger = logging.getLogger(__name__)
 
+# Skills that require readable file content to function
+FILE_DEPENDENT_SKILLS = {
+    "healthcare_report_simplifier",
+    "medical_report_simplifier",
+}
+
 
 class BaseAdaptiveAgent:
     def __init__(self, settings: Settings, skill_loader: SkillLoader):
@@ -29,13 +35,23 @@ class BaseAdaptiveAgent:
         file_content: Optional[str] = None,
     ) -> str:
         clean_input = SkillValidator.sanitize_user_input(user_input)
+        normalized_skill = skill_name.strip().lower()
 
-        if skill_name == "healthcare_report_simplifier" and file_content is not None:
+        # Guard: file-dependent skills need readable content
+        if normalized_skill in FILE_DEPENDENT_SKILLS and file_content is not None:
             normalized_content = file_content.strip()
             if not normalized_content or len(normalized_content) < 30:
                 if (file_name or "").lower().endswith(".pdf"):
-                    return "❌ PDF appears to be a scanned image. No text found."
-                return "❌ Could not read report content."
+                    return (
+                        "**File Read Error**\n\n"
+                        "The uploaded PDF appears to be a scanned image with no extractable text. "
+                        "Please use a text-selectable PDF, or paste the report text directly into the chat."
+                    )
+                return (
+                    "**File Read Error**\n\n"
+                    "The uploaded file appears to be empty or unreadable. "
+                    "Please check the file and try again."
+                )
 
         # Deterministic role scope check — reject before LLM if out of scope
         is_in_scope, rejection_msg = check_role_scope(skill_name, clean_input)
@@ -55,6 +71,8 @@ class BaseAdaptiveAgent:
 
         logger.info("Running agent with skill=%s provider=%s", skill_name, self.settings.llm_provider)
         output = await self.llm.run(system_msg, user_msg)
-        output = enforce_output_policy(output)
-        logger.info("Agent run completed for skill=%s", skill_name)
+
+        # Pass skill_name so output_guard can apply the correct character limit
+        output = enforce_output_policy(output, skill_name=normalized_skill)
+        logger.info("Agent run completed for skill=%s output_len=%d", skill_name, len(output))
         return output
