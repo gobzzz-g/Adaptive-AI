@@ -30,6 +30,13 @@ class BaseAdaptiveAgent:
     ) -> str:
         clean_input = SkillValidator.sanitize_user_input(user_input)
 
+        if skill_name == "healthcare_report_simplifier" and file_content is not None:
+            normalized_content = file_content.strip()
+            if not normalized_content or len(normalized_content) < 30:
+                if (file_name or "").lower().endswith(".pdf"):
+                    return "❌ PDF appears to be a scanned image. No text found."
+                return "❌ Could not read report content."
+
         # Deterministic role scope check — reject before LLM if out of scope
         is_in_scope, rejection_msg = check_role_scope(skill_name, clean_input)
         if not is_in_scope:

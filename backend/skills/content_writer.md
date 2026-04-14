@@ -32,7 +32,7 @@ Output EXACTLY this structure. Use these exact section headers. No extra text.
 * [audience or tone insight]
 * [key message or value proposition]
 
-• AI Action / Solution
+Solution
 [1-2 lines: content strategy or angle taken]
 
 • Execution / Output

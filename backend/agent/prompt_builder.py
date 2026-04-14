@@ -10,7 +10,7 @@ OUTSIDE_ROLE_MESSAGE = "This task is outside my role."
 UNIVERSAL_FORMAT = (
     "• Task Summary\n"
     "• Key Findings\n"
-    "• AI Action / Solution\n"
+    "• Solution\n"
     "• Execution / Output\n"
     "• Expected Outcome"
 )
@@ -32,6 +32,9 @@ SYSTEM_INSTRUCTION = (
 
 # Agents that output plain email format (not universal 5-section)
 EMAIL_AGENTS = {"email_outreach_agent"}
+
+# Skills that supply their own full system prompt
+CUSTOM_SYSTEM_PROMPT_SKILLS = {"healthcare_report_simplifier"}
 
 EMAIL_SYSTEM_INSTRUCTION = (
     "You are a professional business email writer. "
@@ -81,18 +84,34 @@ def build_prompt(
 ) -> tuple[str, str]:
     """
     Returns (system_message, user_message).
-    system_message → Ollama 'system' role (highest model priority).
-    user_message   → Ollama 'user' role (skill content + input + directives).
+    system_message → OpenAI-compatible 'system' role (highest model priority).
+    user_message   → OpenAI-compatible 'user' role (skill content + input + directives).
     """
-    file_block = ""
+    normalized_skill_name = skill_name.strip().lower()
+
+    if normalized_skill_name in CUSTOM_SYSTEM_PROMPT_SKILLS:
+        report_text = (file_content or "").strip() or user_input.strip()
+        system_msg = skill_content.strip()
+        user_msg = (
+            "Read and analyze ONLY this document content.\n"
+            "DO NOT add anything that is not written below.\n\n"
+            "DOCUMENT TEXT:\n"
+            f"{report_text}"
+        )
+        return system_msg, user_msg
+
+    normalized_file_content = ""
     if file_content and file_content.strip():
-        safe_name = (file_name or "uploaded_file").strip()
         normalized_file_content = file_content.strip()
         if len(normalized_file_content) > MAX_FILE_CONTENT_CHARS:
             normalized_file_content = (
                 f"{normalized_file_content[:MAX_FILE_CONTENT_CHARS]}\n\n"
                 f"[Truncated to {MAX_FILE_CONTENT_CHARS} characters for model stability.]"
             )
+
+    file_block = ""
+    if normalized_file_content:
+        safe_name = (file_name or "uploaded_file").strip()
         file_block = (
             "=== UPLOADED FILE ===\n"
             f"Filename: {safe_name}\n"
@@ -100,7 +119,7 @@ def build_prompt(
             "=== END FILE ===\n\n"
         )
 
-    is_email_agent = skill_name in EMAIL_AGENTS
+    is_email_agent = normalized_skill_name in EMAIL_AGENTS
     system_msg = EMAIL_SYSTEM_INSTRUCTION if is_email_agent else SYSTEM_INSTRUCTION
 
     # Extract the output format from this specific skill for reinforcement

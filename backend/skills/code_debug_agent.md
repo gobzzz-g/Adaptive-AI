@@ -32,7 +32,7 @@ Output EXACTLY this structure. Use these exact section headers. No extra text.
 * [error or issue 1]
 * [error or issue 2]
 
-• AI Action / Solution
+Solution
 [1-2 lines: what was fixed and how]
 
 • Execution / Output

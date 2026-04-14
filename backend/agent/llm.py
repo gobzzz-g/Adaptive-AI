@@ -1,9 +1,8 @@
 from __future__ import annotations
 
-import time
-from typing import Optional
+import os
 
-import httpx
+from dotenv import load_dotenv
 from openai import OpenAI
 
 from config.settings import Settings
@@ -12,6 +11,11 @@ try:
     import google.generativeai as genai
 except ImportError:  # pragma: no cover
     genai = None
+
+load_dotenv()
+
+NVIDIA_NIM_BASE_URL = "https://integrate.api.nvidia.com/v1"
+NVIDIA_NIM_MODEL = "meta/llama-3.1-8b-instruct"
 
 
 class LLMClient:
@@ -47,71 +51,28 @@ class LLMClient:
         except Exception as exc:  # noqa: BLE001
             raise RuntimeError(f"Gemini request failed: {exc}") from exc
 
+    def _call_nvidia_nim(self, system_msg: str, user_msg: str) -> str:
+        api_key = (os.getenv("NVIDIA_API_KEY") or "").strip()
+        if not api_key:
+            raise RuntimeError("NVIDIA_API_KEY is not set")
 
-    def _call_ollama(self, system_msg: str, user_msg: str) -> str:
-        base_url = self.settings.ollama_base_url.strip().rstrip("/")
-        model = self.settings.ollama_model.strip()
-
-        if not base_url:
-            raise RuntimeError("OLLAMA_BASE_URL is not set")
-        if not model:
-            raise RuntimeError("OLLAMA_MODEL is not set")
-
-        payload = {
-            "model": model,
-            "messages": [
-                {"role": "system", "content": system_msg},
-                {"role": "user", "content": user_msg},
-            ],
-            "stream": False,
-            "options": {
-                "temperature": self.settings.temperature,
-                "num_predict": self.settings.ollama_num_predict,
-                "top_p": self.settings.ollama_top_p,
-            },
-        }
-
-        timeout = self.settings.ollama_timeout
-        last_error: Optional[Exception] = None
-        for attempt in range(2):  # max 1 retry to avoid hanging
-            try:
-                response = httpx.post(
-                    f"{base_url}/api/chat",
-                    json=payload,
-                    timeout=timeout,
-                )
-                response.raise_for_status()
-                data = response.json()
-                output = (
-                    (data.get("message") or {}).get("content") or ""
-                ).strip()
-                if not output:
-                    raise RuntimeError("Ollama returned an empty response")
-                return output
-            except httpx.TimeoutException as exc:
-                raise RuntimeError(
-                    f"Ollama timed out after {timeout}s. Try a lighter model or increase OLLAMA_TIMEOUT."
-                ) from exc
-            except httpx.HTTPStatusError as exc:
-                status_code = exc.response.status_code if exc.response is not None else 0
-                detail = exc.response.text if exc.response is not None else str(exc)
-                last_error = RuntimeError(f"Ollama request failed: {detail}")
-                if attempt < 1 and status_code >= 500:
-                    time.sleep(1.5)
-                    continue
-                raise last_error from exc
-            except httpx.HTTPError as exc:
-                last_error = RuntimeError(f"Ollama connection failed: {exc}")
-                if attempt < 1:
-                    time.sleep(1.5)
-                    continue
-                raise last_error from exc
-            except ValueError as exc:
-                raise RuntimeError("Ollama returned invalid JSON") from exc
-
-        if last_error is not None:
-            raise last_error
-        raise RuntimeError("Ollama request failed for an unknown reason")
+        client = OpenAI(
+            base_url=NVIDIA_NIM_BASE_URL,
+            api_key=api_key,
+        )
+        try:
+            completion = client.chat.completions.create(
+                model=NVIDIA_NIM_MODEL,
+                messages=[
+                    {"role": "system", "content": system_msg},
+                    {"role": "user", "content": user_msg},
+                ],
+                temperature=self.settings.temperature,
+                max_tokens=1500,
+            )
+            return completion.choices[0].message.content or ""
+        except Exception as exc:  # noqa: BLE001
+            raise RuntimeError(f"NVIDIA NIM request failed: {exc}") from exc
 
     def _call_minimax(self, prompt: str) -> str:
         if not self.settings.minimax_api_key:
@@ -140,8 +101,8 @@ class LLMClient:
             return self._call_openai(combined_prompt).strip()
         if provider == "gemini":
             return self._call_gemini(combined_prompt).strip()
-        if provider == "ollama":
-            return self._call_ollama(system_msg, user_msg).strip()
+        if provider == "nvidia":
+            return self._call_nvidia_nim(system_msg, user_msg).strip()
         if provider == "minimax":
             return self._call_minimax(combined_prompt).strip()
-        raise RuntimeError("Unsupported LLM provider. Use 'openai', 'gemini', 'ollama', or 'minimax'.")
+        raise RuntimeError("Unsupported LLM provider. Use 'openai', 'gemini', 'nvidia', or 'minimax'.")

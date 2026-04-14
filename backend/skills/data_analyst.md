@@ -31,7 +31,7 @@ Output EXACTLY this structure. Use these exact section headers. No extra text.
 * [key insight 1 with evidence]
 * [key insight 2 with evidence]
 
-• AI Action / Solution
+Solution
 [1-2 lines: analysis approach and what was identified]
 
 • Execution / Output
