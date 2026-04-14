@@ -12,29 +12,28 @@
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════
-     APP SHELL
-═══════════════════════════════════════════════════ -->
 <div id="app">
 
-  <!-- LEFT SIDEBAR -->
+  <!-- ══════════════════════════════════════════════
+       LEFT SIDEBAR
+  ══════════════════════════════════════════════ -->
   <aside id="sidebar" class="sidebar" role="navigation" aria-label="Main navigation">
+
     <!-- Logo -->
     <div class="sidebar-logo">
       <div class="logo-icon">
         <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="18,2 34,11 34,25 18,34 2,25 2,11" fill="url(#hexGrad)" opacity="0.15" stroke="url(#hexGrad)" stroke-width="1.5"/>
-          <circle cx="18" cy="18" r="5" fill="url(#hexGrad)" opacity="0.9"/>
-          <line x1="18" y1="13" x2="18" y2="6" stroke="url(#hexGrad)" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="18" y1="23" x2="18" y2="30" stroke="url(#hexGrad)" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="13.3" y1="15.5" x2="7.2" y2="11.5" stroke="url(#hexGrad)" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="22.7" y1="20.5" x2="28.8" y2="24.5" stroke="url(#hexGrad)" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="13.3" y1="20.5" x2="7.2" y2="24.5" stroke="url(#hexGrad)" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="22.7" y1="15.5" x2="28.8" y2="11.5" stroke="url(#hexGrad)" stroke-width="1.5" stroke-linecap="round"/>
+          <polygon points="18,2 34,11 34,25 18,34 2,25 2,11" fill="url(#hg)" opacity="0.15" stroke="url(#hg)" stroke-width="1.5"/>
+          <circle cx="18" cy="18" r="5" fill="url(#hg)"/>
+          <line x1="18" y1="13" x2="18" y2="6"  stroke="url(#hg)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="18" y1="23" x2="18" y2="30" stroke="url(#hg)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="13.3" y1="15.5" x2="7.2"  y2="11.5" stroke="url(#hg)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="22.7" y1="20.5" x2="28.8" y2="24.5" stroke="url(#hg)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="13.3" y1="20.5" x2="7.2"  y2="24.5" stroke="url(#hg)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="22.7" y1="15.5" x2="28.8" y2="11.5" stroke="url(#hg)" stroke-width="1.5" stroke-linecap="round"/>
           <defs>
-            <linearGradient id="hexGrad" x1="2" y1="2" x2="34" y2="34" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#6366f1"/>
-              <stop offset="1" stop-color="#a855f7"/>
+            <linearGradient id="hg" x1="2" y1="2" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#6366f1"/><stop offset="1" stop-color="#a855f7"/>
             </linearGradient>
           </defs>
         </svg>
@@ -43,16 +42,16 @@
         <span class="logo-name">Nexus<span class="logo-accent">AI</span></span>
         <span class="logo-tagline">Agent Platform</span>
       </div>
-      <button id="sidebar-collapse-btn" class="sidebar-collapse-btn" title="Collapse sidebar" aria-label="Collapse sidebar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      <button id="sidebar-collapse-btn" class="icon-btn-bare" title="Collapse" aria-label="Collapse sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M15 18l-6-6 6-6"/></svg>
       </button>
     </div>
 
     <!-- New Chat -->
-    <div class="sidebar-new-chat">
-      <button id="new-chat-btn" class="btn-new-chat" onclick="newChat()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-        <span>New Chat</span>
+    <div class="sidebar-actions">
+      <button class="btn-new-chat" onclick="newChat()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M12 5v14M5 12h14"/></svg>
+        New Chat
       </button>
     </div>
 
@@ -66,181 +65,201 @@
 
     <!-- Chat History -->
     <div class="sidebar-chats" id="sidebar-chats">
-      <div class="chat-section-label">📌 Pinned</div>
-      <div id="pinned-chats">
-        <div class="chat-item pinned" data-id="pinned-1" onclick="loadChat('pinned-1')">
-          <div class="chat-item-icon">🩺</div>
-          <div class="chat-item-body">
-            <div class="chat-item-title">Medical Report Analysis</div>
-            <div class="chat-item-preview">Simplified lab results for patient...</div>
-          </div>
-          <div class="chat-item-actions">
-            <button class="chat-action-btn" onclick="event.stopPropagation(); pinChat('pinned-1')" title="Unpin">📌</button>
-          </div>
-        </div>
+      <div class="chat-section-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Pinned
       </div>
+      <div id="pinned-chats"></div>
 
-      <div class="chat-section-label" style="margin-top:16px">🕐 Recent</div>
-      <div id="recent-chats">
-        <!-- Populated dynamically -->
+      <div class="chat-section-label" style="margin-top:14px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Recent
       </div>
+      <div id="recent-chats"></div>
     </div>
 
-    <!-- Sidebar Nav -->
+    <!-- Nav -->
     <nav class="sidebar-nav">
-      <button class="nav-btn active" id="nav-chat" onclick="switchView('chat')" title="Chat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <button class="nav-btn active" id="nav-chat" onclick="switchView('chat')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <span>Chat</span>
       </button>
-      <button class="nav-btn" id="nav-agents" onclick="switchView('agents')" title="Agents">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><circle cx="19" cy="8" r="2" fill="currentColor" opacity=".4"/></svg>
+      <button class="nav-btn" id="nav-agents" onclick="switchView('agents')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="17"/><line x1="9" y1="14.5" x2="15" y2="14.5" stroke-dasharray="2 0"/></svg>
         <span>Agents</span>
       </button>
-      <button class="nav-btn" id="nav-create" onclick="switchView('create')" title="Create Agent">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <button class="nav-btn" id="nav-create" onclick="switchView('create')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
         <span>Create</span>
       </button>
-      <button class="nav-btn" id="nav-settings" onclick="switchView('settings')" title="Settings">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <button class="nav-btn" id="nav-settings" onclick="switchView('settings')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
         <span>Settings</span>
       </button>
     </nav>
 
-    <!-- User Profile -->
+    <!-- Profile -->
     <div class="sidebar-profile" onclick="toggleProfileMenu()">
       <div class="profile-avatar">G</div>
       <div class="profile-info">
         <div class="profile-name">Gobzz</div>
-        <div class="profile-plan">
-          <span class="plan-badge">Pro</span>
-        </div>
+        <span class="plan-badge">Pro</span>
       </div>
-      <svg class="profile-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="color:var(--text-3);flex-shrink:0"><path d="M6 9l6 6 6-6"/></svg>
     </div>
   </aside>
 
-  <!-- MOBILE SIDEBAR OVERLAY -->
+  <!-- Backdrop -->
   <div id="sidebar-backdrop" class="sidebar-backdrop hidden" onclick="closeMobileSidebar()"></div>
 
-  <!-- MAIN CONTENT -->
-  <main id="main" class="main">
+  <!-- ══════════════════════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════════════════════ -->
+  <main class="main">
 
-    <!-- TOP BAR -->
+    <!-- TOPBAR -->
     <header class="topbar">
-      <button id="mobile-menu-btn" class="mobile-menu-btn" onclick="openMobileSidebar()" aria-label="Open menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <button class="mobile-menu-btn" onclick="openMobileSidebar()" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
 
-      <!-- Active agent badge -->
       <div id="active-agent-badge" class="active-agent-badge hidden">
-        <div class="badge-dot"></div>
-        <span id="active-agent-name-topbar">No agent selected</span>
-        <button class="badge-remove" onclick="clearActiveAgent()" title="Remove agent">✕</button>
+        <div class="badge-pulse"></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <span id="active-agent-name-topbar"></span>
+        <button class="badge-remove" onclick="clearActiveAgent()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="11" height="11"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
       </div>
 
       <div class="topbar-right">
-        <!-- Model selector -->
-        <div class="model-selector" onclick="toggleModelDropdown()">
-          <div class="model-indicator"></div>
+        <div class="model-selector" onclick="toggleModelDropdown()" id="model-selector-btn">
+          <div class="model-dot"></div>
           <span id="selected-model-label">Llama 3.1</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M6 9l6 6 6-6"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12"><path d="M6 9l6 6 6-6"/></svg>
           <div id="model-dropdown" class="model-dropdown hidden">
-            <div class="model-option active" onclick="selectModel('llama', 'Llama 3.1', event)">
-              <div class="model-opt-icon" style="background:#f59e0b22;color:#f59e0b">L</div>
+            <div class="model-opt active" onclick="selectModel('llama','Llama 3.1',event)">
+              <div class="model-opt-icon amber">L</div>
               <div><div class="model-opt-name">Llama 3.1</div><div class="model-opt-sub">NVIDIA NIM</div></div>
+              <svg id="check-llama" class="model-opt-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <div class="model-option" onclick="selectModel('gpt4', 'GPT-4o', event)">
-              <div class="model-opt-icon" style="background:#10b98122;color:#10b981">G</div>
+            <div class="model-opt" onclick="selectModel('gpt4','GPT-4o',event)">
+              <div class="model-opt-icon green">G</div>
               <div><div class="model-opt-name">GPT-4o</div><div class="model-opt-sub">OpenAI</div></div>
+              <svg id="check-gpt4" class="model-opt-check hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <div class="model-option" onclick="selectModel('claude', 'Claude 3.5', event)">
-              <div class="model-opt-icon" style="background:#f97316 22;color:#f97316">C</div>
+            <div class="model-opt" onclick="selectModel('claude','Claude 3.5',event)">
+              <div class="model-opt-icon orange">C</div>
               <div><div class="model-opt-name">Claude 3.5</div><div class="model-opt-sub">Anthropic</div></div>
+              <svg id="check-claude" class="model-opt-check hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
           </div>
         </div>
-        <button id="notif-btn" class="icon-btn" title="Notifications" onclick="showToast('No new notifications','info')">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <button class="icon-btn" title="Notifications" onclick="showToast('No new notifications','info')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="17" height="17"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
         </button>
       </div>
     </header>
 
-    <!-- ═══════════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════
          VIEW: CHAT
-    ═══════════════════════════════════════════════════ -->
+    ══════════════════════════════════════════════ -->
     <div id="view-chat" class="view active">
+
+      <!-- Chat scroll area -->
       <div id="chat-container" class="chat-container">
 
-        <!-- Welcome screen (shown when no messages) -->
+        <!-- Welcome -->
         <div id="chat-welcome" class="chat-welcome">
           <div class="welcome-glow"></div>
-          <div class="welcome-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
-              <polygon points="24,3 45,15 45,33 24,45 3,33 3,15" fill="url(#wg)" opacity="0.12" stroke="url(#wg)" stroke-width="1.5"/>
-              <circle cx="24" cy="24" r="7" fill="url(#wg)"/>
-              <line x1="24" y1="17" x2="24" y2="8" stroke="url(#wg)" stroke-width="2" stroke-linecap="round"/>
-              <line x1="24" y1="31" x2="24" y2="40" stroke="url(#wg)" stroke-width="2" stroke-linecap="round"/>
-              <line x1="17.6" y1="20.5" x2="9.6" y2="15.5" stroke="url(#wg)" stroke-width="2" stroke-linecap="round"/>
-              <line x1="30.4" y1="27.5" x2="38.4" y2="32.5" stroke="url(#wg)" stroke-width="2" stroke-linecap="round"/>
-              <line x1="17.6" y1="27.5" x2="9.6" y2="32.5" stroke="url(#wg)" stroke-width="2" stroke-linecap="round"/>
-              <line x1="30.4" y1="20.5" x2="38.4" y2="15.5" stroke="url(#wg)" stroke-width="2" stroke-linecap="round"/>
+          <div class="welcome-logo">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+              <polygon points="28,3 53,17 53,39 28,53 3,39 3,17" fill="url(#wlg)" opacity="0.1" stroke="url(#wlg)" stroke-width="1.5"/>
+              <circle cx="28" cy="28" r="8" fill="url(#wlg)"/>
+              <line x1="28" y1="20" x2="28" y2="10" stroke="url(#wlg)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="28" y1="36" x2="28" y2="46" stroke="url(#wlg)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="20.7" y1="24" x2="11.3" y2="18.6" stroke="url(#wlg)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="35.3" y1="32" x2="44.7" y2="37.4" stroke="url(#wlg)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="20.7" y1="32" x2="11.3" y2="37.4" stroke="url(#wlg)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="35.3" y1="24" x2="44.7" y2="18.6" stroke="url(#wlg)" stroke-width="2" stroke-linecap="round"/>
               <defs>
-                <linearGradient id="wg" x1="3" y1="3" x2="45" y2="45" gradientUnits="userSpaceOnUse">
+                <linearGradient id="wlg" x1="3" y1="3" x2="53" y2="53" gradientUnits="userSpaceOnUse">
                   <stop stop-color="#6366f1"/><stop offset="1" stop-color="#a855f7"/>
                 </linearGradient>
               </defs>
             </svg>
           </div>
-          <h1 class="welcome-title">Gobzz returns! 👋</h1>
-          <p class="welcome-subtitle">Your multi-agent AI platform is ready. Select an agent or just start chatting.</p>
-          <div class="welcome-suggestions">
-            <button class="suggestion-chip" onclick="insertSuggestion(this)">Simplify a medical report</button>
-            <button class="suggestion-chip" onclick="insertSuggestion(this)">Write an email outreach campaign</button>
-            <button class="suggestion-chip" onclick="insertSuggestion(this)">Analyze healthcare revenue</button>
-            <button class="suggestion-chip" onclick="insertSuggestion(this)">Generate a new AI agent</button>
+          <h1 class="welcome-title">Good to have you back, Gobzz.</h1>
+          <p class="welcome-sub">Select an agent or start typing — your AI platform is ready.</p>
+          <div class="welcome-chips">
+            <button class="chip" onclick="insertSuggestion(this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              Simplify a medical report
+            </button>
+            <button class="chip" onclick="insertSuggestion(this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Write an email outreach campaign
+            </button>
+            <button class="chip" onclick="insertSuggestion(this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              Analyze healthcare revenue data
+            </button>
+            <button class="chip" onclick="insertSuggestion(this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Generate a custom AI agent
+            </button>
           </div>
         </div>
 
         <!-- Messages -->
         <div id="chat-messages" class="chat-messages"></div>
 
-        <!-- Typing indicator -->
-        <div id="typing-indicator" class="typing-indicator hidden">
-          <div class="typing-avatar">
-            <svg viewBox="0 0 24 24" fill="none" width="14" height="14"><polygon points="12,2 22,7 22,17 12,22 2,17 2,7" fill="url(#tg)" /><defs><linearGradient id="tg" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#6366f1"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs></svg>
+        <!-- Thinking indicator -->
+        <div id="thinking-indicator" class="thinking-indicator hidden">
+          <div class="thinking-avatar">
+            <svg viewBox="0 0 20 20" fill="none" width="12" height="12">
+              <polygon points="10,1 19,5.5 19,14.5 10,19 1,14.5 1,5.5" fill="url(#tg)"/>
+              <defs><linearGradient id="tg" x1="1" y1="1" x2="19" y2="19"><stop stop-color="#6366f1"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs>
+            </svg>
           </div>
-          <div class="typing-dots"><span></span><span></span><span></span></div>
+          <div class="thinking-content">
+            <span class="thinking-label">AI is thinking</span>
+            <div class="thinking-dots"><span></span><span></span><span></span></div>
+          </div>
         </div>
       </div>
 
       <!-- Input Bar -->
-      <div class="chat-input-bar">
-        <!-- Active skill badge -->
-        <div id="skill-badge" class="skill-badge hidden">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <span id="skill-badge-name">medical_report_simplifier</span>
-          <button onclick="clearSkillBadge()" class="skill-badge-remove">✕</button>
-        </div>
-
-        <!-- File upload badge -->
-        <div id="file-badge" class="file-badge hidden">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          <span id="file-badge-name">document.pdf</span>
-          <button onclick="clearFileBadge()" class="skill-badge-remove">✕</button>
-        </div>
-
-        <div class="chat-input-wrap">
-          <!-- Left actions -->
-          <div class="input-left-actions">
-            <button class="input-action-btn" onclick="document.getElementById('file-uploader').click()" title="Attach file">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
-            </button>
-            <input type="file" id="file-uploader" class="hidden" accept=".pdf,.png,.jpg,.jpeg,.txt,.csv" onchange="handleChatFileAttach(this.files[0])"/>
-            <button class="input-action-btn" onclick="toggleAgentPicker()" title="Pick an agent" id="agent-picker-btn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      <div class="chat-input-area">
+        <!-- Badges row -->
+        <div class="input-badges" id="input-badges">
+          <div id="skill-badge" class="skill-badge hidden">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <span id="skill-badge-name"></span>
+            <button class="badge-x" onclick="clearSkillBadge()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="10" height="10"><path d="M18 6L6 18M6 6l12 12"/></svg>
             </button>
           </div>
+          <div id="file-badge" class="file-badge hidden">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span id="file-badge-name"></span>
+            <button class="badge-x" onclick="clearFileBadge()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="10" height="10"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </div>
 
+        <!-- Input box -->
+        <div class="input-box">
+          <div class="input-tools">
+            <button class="tool-btn" onclick="document.getElementById('file-uploader').click()" title="Attach file">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="17" height="17"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+            </button>
+            <input type="file" id="file-uploader" class="hidden" accept=".pdf,.png,.jpg,.jpeg,.txt,.csv" onchange="handleChatFileAttach(this.files[0])"/>
+            <button class="tool-btn" id="agent-picker-btn" onclick="toggleAgentPicker()" title="Select agent">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="17" height="17"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            </button>
+          </div>
           <textarea
             id="chat-input"
             class="chat-textarea"
@@ -249,183 +268,197 @@
             onkeydown="handleChatKeydown(event)"
             oninput="autoResizeTextarea(this)"
           ></textarea>
-
           <button id="send-btn" class="send-btn" onclick="sendMessage()" title="Send">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </button>
         </div>
 
+        <p class="input-hint">Nexus AI can make mistakes. Verify important information.</p>
+
         <!-- Agent Picker Popup -->
         <div id="agent-picker" class="agent-picker hidden">
-          <div class="agent-picker-header">
-            <div class="agent-picker-title">Select an Agent</div>
-            <button onclick="toggleAgentPicker()" class="agent-picker-close">✕</button>
+          <div class="picker-head">
+            <div class="picker-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+              Select Agent
+            </div>
+            <button class="picker-close" onclick="toggleAgentPicker()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
           </div>
-          <div class="agent-picker-search">
+          <div class="picker-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" style="color:var(--text-3);flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             <input type="text" placeholder="Search agents..." oninput="filterAgentPicker(this.value)" id="agent-picker-search"/>
           </div>
-          <div id="agent-picker-list" class="agent-picker-list">
-            <!-- Populated dynamically -->
-          </div>
+          <div id="agent-picker-list" class="picker-list"></div>
         </div>
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════
          VIEW: AGENTS
-    ═══════════════════════════════════════════════════ -->
+    ══════════════════════════════════════════════ -->
     <div id="view-agents" class="view">
       <div class="view-header">
         <div>
           <h2 class="view-title">Agent Library</h2>
-          <p class="view-subtitle">Browse, activate, and manage your AI agents</p>
+          <p class="view-sub">Browse, activate, and manage your AI agents</p>
         </div>
         <div class="view-header-actions">
-          <div class="search-wrap" style="width:220px">
+          <div class="search-wrap" style="width:210px">
             <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             <input id="agent-search" type="text" placeholder="Search agents..." oninput="filterAgents(this.value)"/>
           </div>
           <button class="btn-primary" onclick="switchView('create')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><path d="M12 5v14M5 12h14"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M12 5v14M5 12h14"/></svg>
             New Agent
           </button>
         </div>
       </div>
 
-      <!-- Stats row -->
-      <div class="agents-stats">
-        <div class="stat-pill"><span id="agent-count-total" class="stat-value">0</span> <span class="stat-label">Total</span></div>
-        <div class="stat-pill active"><span id="agent-count-active" class="stat-value">0</span> <span class="stat-label">Active</span></div>
+      <div class="agents-stats-row">
+        <div class="stat-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" style="color:var(--text-3)"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          <span id="agent-count-total" class="stat-num">0</span>
+          <span class="stat-lbl">Total</span>
+        </div>
+        <div class="stat-pill active-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" width="14"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span id="agent-count-active" class="stat-num">0</span>
+          <span class="stat-lbl">Active</span>
+        </div>
       </div>
 
-      <div id="agents-grid" class="agents-grid">
-        <!-- Populated dynamically -->
-      </div>
+      <div id="agents-grid" class="agents-grid"></div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════
          VIEW: CREATE AGENT
-    ═══════════════════════════════════════════════════ -->
+    ══════════════════════════════════════════════ -->
     <div id="view-create" class="view">
       <div class="view-header">
         <div>
           <h2 class="view-title">Create Agent</h2>
-          <p class="view-subtitle">Upload a skill file or generate one with AI</p>
+          <p class="view-sub">Upload a skill file or generate one with AI</p>
         </div>
       </div>
 
       <div class="create-layout">
 
-        <!-- OPTION 1: Upload -->
-        <div class="create-card glass-card" id="upload-card">
+        <!-- Upload -->
+        <div class="create-card" id="upload-card">
           <div class="create-card-header">
-            <div class="create-card-icon" style="background:rgba(16,185,129,0.12);color:#10b981">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <div class="create-card-icon green-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
             </div>
             <div>
-              <h3 class="create-card-title">Upload Agent File</h3>
-              <p class="create-card-desc">Drag & drop a <code>.md</code> skill file</p>
+              <h3 class="create-card-title">Upload Skill File</h3>
+              <p class="create-card-desc">Register an existing <code>.md</code> agent file</p>
             </div>
           </div>
-
           <div id="dropzone" class="dropzone" onclick="document.getElementById('skill-file-input').click()">
             <div class="dropzone-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="36" height="36"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40" style="color:var(--text-3)"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
             </div>
-            <p class="dropzone-text">Drop your <strong>.md</strong> agent file here</p>
+            <p class="dropzone-title">Drop your <strong>.md</strong> agent file here</p>
             <p class="dropzone-sub">or click to browse — max 1 MB</p>
           </div>
           <input type="file" id="skill-file-input" accept=".md" class="hidden"/>
-
           <div id="upload-feedback" class="upload-feedback hidden"></div>
         </div>
 
-        <!-- OPTION 2: AI Generator -->
-        <div class="create-card glass-card" id="generate-card">
+        <!-- AI Generator -->
+        <div class="create-card" id="generate-card">
           <div class="create-card-header">
-            <div class="create-card-icon" style="background:rgba(139,92,246,0.12);color:#8b5cf6">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <div class="create-card-icon purple-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4M21 5h-4"/></svg>
             </div>
             <div>
               <h3 class="create-card-title">Generate with AI</h3>
-              <p class="create-card-desc">Describe a role — AI writes the agent</p>
+              <p class="create-card-desc">Describe a role — AI writes the skill file</p>
             </div>
           </div>
 
-          <div class="generate-form">
+          <div class="gen-form">
             <label class="form-label">Agent Role Description</label>
-            <textarea
-              id="agent-gen-prompt"
-              class="gen-textarea"
-              placeholder="e.g. Create a legal contract reviewer that summarizes key clauses, flags risky terms, and suggests improvements in plain English..."
-              rows="4"
-            ></textarea>
+            <textarea id="agent-gen-prompt" class="gen-textarea" placeholder="e.g. Create a legal contract reviewer that summarizes key clauses, flags risky terms, and suggests improvements in plain English..." rows="4"></textarea>
 
-            <label class="form-label" style="margin-top:12px">Agent Name (optional)</label>
+            <label class="form-label" style="margin-top:12px">Agent Name <span style="color:var(--text-3);font-weight:400">(optional)</span></label>
             <input type="text" id="agent-gen-name" class="gen-input" placeholder="e.g. legal_contract_reviewer"/>
 
             <button id="generate-btn" class="btn-generate" onclick="generateAgent()">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4M21 5h-4"/></svg>
               Generate Agent
             </button>
           </div>
 
-          <!-- Generated Preview -->
-          <div id="generated-preview" class="generated-preview hidden">
-            <div class="preview-header">
-              <span class="preview-label">Generated Skill File</span>
-              <div class="preview-actions">
-                <button class="preview-btn" onclick="copyGeneratedAgent()">Copy</button>
-                <button class="preview-btn accent" id="save-agent-btn" onclick="saveGeneratedAgent()">Save as Agent</button>
+          <div id="generated-preview" class="gen-preview hidden">
+            <div class="gen-preview-head">
+              <span class="gen-preview-label">Generated Skill File</span>
+              <div class="gen-preview-actions">
+                <button class="btn-sm" onclick="copyGeneratedAgent()">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy
+                </button>
+                <button class="btn-sm accent" id="save-agent-btn" onclick="saveGeneratedAgent()">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13"><polyline points="20 6 9 17 4 12"/></svg>
+                  Save Agent
+                </button>
               </div>
             </div>
-            <pre id="generated-content" class="preview-code"></pre>
+            <pre id="generated-content" class="gen-preview-code"></pre>
           </div>
         </div>
-
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════
          VIEW: SETTINGS
-    ═══════════════════════════════════════════════════ -->
+    ══════════════════════════════════════════════ -->
     <div id="view-settings" class="view">
       <div class="view-header">
         <div>
           <h2 class="view-title">Settings</h2>
-          <p class="view-subtitle">Configure your platform preferences</p>
+          <p class="view-sub">Configure your platform and manage agents</p>
         </div>
-        <button class="btn-primary" onclick="saveSettings()">Save Changes</button>
+        <button class="btn-primary" onclick="saveSettings()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          Save Changes
+        </button>
       </div>
 
-      <div class="settings-layout">
+      <div class="settings-grid">
 
         <!-- API Keys -->
-        <section class="settings-section glass-card">
-          <h3 class="settings-section-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+        <section class="settings-card">
+          <h3 class="settings-card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
             API Keys
           </h3>
           <div class="settings-field">
             <label class="form-label">NVIDIA API Key</label>
-            <div class="input-reveal-wrap">
+            <div class="reveal-wrap">
               <input type="password" id="nvidia-key" class="settings-input" placeholder="nvapi-••••••••"/>
-              <button class="reveal-btn" onclick="toggleReveal('nvidia-key', this)">👁</button>
+              <button class="reveal-btn" onclick="toggleReveal('nvidia-key',this)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
             </div>
           </div>
           <div class="settings-field">
             <label class="form-label">OpenAI API Key</label>
-            <div class="input-reveal-wrap">
+            <div class="reveal-wrap">
               <input type="password" id="openai-key" class="settings-input" placeholder="sk-••••••••"/>
-              <button class="reveal-btn" onclick="toggleReveal('openai-key', this)">👁</button>
+              <button class="reveal-btn" onclick="toggleReveal('openai-key',this)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
             </div>
           </div>
         </section>
 
         <!-- Model -->
-        <section class="settings-section glass-card">
-          <h3 class="settings-section-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <section class="settings-card">
+          <h3 class="settings-card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             Model Settings
           </h3>
           <div class="settings-field">
@@ -438,48 +471,52 @@
             </select>
           </div>
           <div class="settings-field">
-            <label class="form-label">Temperature — <span id="temp-val">0.7</span></label>
-            <input type="range" id="temp-slider" min="0" max="1" step="0.1" value="0.7" class="settings-slider" oninput="document.getElementById('temp-val').textContent=this.value"/>
+            <label class="form-label">Temperature <span class="slider-val" id="temp-val">0.7</span></label>
+            <input type="range" id="temp-slider" min="0" max="1" step="0.1" value="0.7" class="slider" oninput="document.getElementById('temp-val').textContent=this.value"/>
           </div>
           <div class="settings-field">
-            <label class="form-label">Max Tokens — <span id="maxtoken-val">1500</span></label>
-            <input type="range" id="maxtoken-slider" min="256" max="4096" step="128" value="1500" class="settings-slider" oninput="document.getElementById('maxtoken-val').textContent=this.value"/>
+            <label class="form-label">Max Tokens <span class="slider-val" id="maxtoken-val">1500</span></label>
+            <input type="range" id="maxtoken-slider" min="256" max="4096" step="128" value="1500" class="slider" oninput="document.getElementById('maxtoken-val').textContent=this.value"/>
           </div>
         </section>
 
         <!-- Agent Management -->
-        <section class="settings-section glass-card" style="grid-column:1/-1">
-          <h3 class="settings-section-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <section class="settings-card full-width">
+          <h3 class="settings-card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="17"/><line x1="9" y1="14.5" x2="15" y2="14.5"/></svg>
             Agent Management
           </h3>
-          <div id="settings-agents-list" class="settings-agents-list">
-            <!-- Populated dynamically -->
-          </div>
+          <div id="settings-agents-list" class="settings-agents-list"></div>
         </section>
 
-        <!-- Profile -->
-        <section class="settings-section glass-card">
-          <h3 class="settings-section-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <!-- Account -->
+        <section class="settings-card">
+          <h3 class="settings-card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             Account
           </h3>
           <div class="settings-field">
             <label class="form-label">Display Name</label>
             <input type="text" class="settings-input" value="Gobzz"/>
           </div>
-          <div class="account-plan">
-            <div class="plan-info">
+          <div class="account-plan-card">
+            <div>
               <div class="plan-name">Pro Plan</div>
               <div class="plan-desc">Unlimited agents · Priority inference</div>
             </div>
-            <div class="usage-bar-wrap">
-              <div class="usage-label">Token Usage <span class="usage-pct">42%</span></div>
+            <div class="usage-section">
+              <div class="usage-row">
+                <span class="usage-label">Token Usage</span>
+                <span class="usage-pct">42%</span>
+              </div>
               <div class="usage-bar"><div class="usage-fill" style="width:42%"></div></div>
               <div class="usage-sub">420K / 1M monthly tokens</div>
             </div>
           </div>
-          <button class="btn-danger" style="margin-top:16px" onclick="showToast('Logged out','info')">Logout</button>
+          <button class="btn-danger" onclick="showToast('Logged out','info')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Logout
+          </button>
         </section>
 
       </div>
@@ -488,22 +525,22 @@
   </main>
 </div>
 
-<!-- ── DELETE CONFIRM MODAL ── -->
+<!-- DELETE MODAL -->
 <div id="delete-modal" class="modal-backdrop hidden" onclick="if(event.target===this)closeDeleteModal()">
   <div class="modal-box">
-    <div class="modal-icon danger">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+    <div class="modal-icon-wrap danger">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
     </div>
     <h3 class="modal-title">Delete Agent?</h3>
-    <p class="modal-desc">Are you sure you want to delete <strong id="modal-skill-name"></strong>? This cannot be undone.</p>
+    <p class="modal-desc">You are about to permanently delete <strong id="modal-skill-name"></strong>. This action cannot be undone.</p>
     <div class="modal-actions">
       <button class="btn-ghost" onclick="closeDeleteModal()">Cancel</button>
-      <button class="btn-danger" id="confirm-delete-btn" onclick="confirmDelete()">Delete</button>
+      <button class="btn-danger" id="confirm-delete-btn" onclick="confirmDelete()">Delete Agent</button>
     </div>
   </div>
 </div>
 
-<!-- ── TOAST CONTAINER ── -->
+<!-- TOAST -->
 <div id="toast-container" class="toast-container" aria-live="polite"></div>
 
 <script src="app.js"></script>
