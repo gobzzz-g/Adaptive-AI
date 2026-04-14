@@ -8,6 +8,12 @@
 // ── CONFIG ────────────────────────────────────────────
 const API_BASE_URL = 'http://localhost:8000';
 
+// Apply stored theme IMMEDIATELY (before DOM paint) to avoid flash
+(function() {
+  const t = localStorage.getItem('nexus-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', t);
+})();
+
 // Streaming: characters per 15ms burst
 const STREAM_CHUNK = 3;
 const STREAM_INTERVAL_MS = 14;
@@ -148,6 +154,24 @@ document.addEventListener('click', e => {
 
 function toggleProfileMenu() {
   showToast('Profile', 'info', 'Account management coming soon.');
+}
+
+// ── THEME TOGGLE ──────────────────────────────────────
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  const next = isDark ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('nexus-theme', next);
+  showToast(
+    isDark ? 'Light mode enabled' : 'Dark mode enabled',
+    'info',
+    isDark ? 'Switched to light theme.' : 'Switched to dark theme.'
+  );
+}
+function applyStoredTheme() {
+  const saved = localStorage.getItem('nexus-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', saved);
 }
 
 // ── BACKEND API ───────────────────────────────────────
