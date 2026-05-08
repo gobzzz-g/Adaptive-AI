@@ -12,8 +12,8 @@ OUTSIDE_ROLE_MESSAGE = "This task is outside my role."
 # Default max for all agents
 MAX_OUTPUT_CHARS = 2200
 
-# Raised limit for structured/long-form agents
-MAX_OUTPUT_CHARS_LONG = 12000
+# Raised limit for structured/long-form agents (medical reports need ~9 sections)
+MAX_OUTPUT_CHARS_LONG = 22000
 
 REFUSAL_PHRASES = (
     "i am not able",

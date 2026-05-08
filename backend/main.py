@@ -1,15 +1,17 @@
 from __future__ import annotations
 
 import base64
-import fitz
 import io
 import logging
 import os
-import pytesseract
 import re
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Optional
+
+import anyio
+import fitz
+import pytesseract
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, File, HTTPException, Request, UploadFile
@@ -21,6 +23,11 @@ from PIL import Image
 from pydantic import BaseModel, Field
 
 from agent.base_agent import BaseAdaptiveAgent
+from agent.playwright_executor import (
+    PlaywrightExecutionError,
+    PlaywrightStep,
+    run_playwright_steps,
+)
 from agent.skill_loader import SkillLoader, SkillNotFoundError
 from agent.validator import InvalidSkillError, SkillValidator
 from config.settings import get_settings
@@ -220,6 +227,34 @@ def _extract_text_from_upload(file_name: str, file_content: str) -> str:
     return file_content
 
 
+def _update_env_file(updates: dict[str, str]) -> None:
+    env_path = Path(__file__).resolve().parent / ".env"
+    existing_lines: list[str] = []
+    if env_path.exists():
+        existing_lines = env_path.read_text(encoding="utf-8").splitlines()
+
+    updated_keys = set()
+    new_lines: list[str] = []
+    for line in existing_lines:
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#") or "=" not in line:
+            new_lines.append(line)
+            continue
+        key, _ = line.split("=", 1)
+        key = key.strip()
+        if key in updates:
+            new_lines.append(f"{key}={updates[key]}")
+            updated_keys.add(key)
+        else:
+            new_lines.append(line)
+
+    for key, value in updates.items():
+        if key not in updated_keys:
+            new_lines.append(f"{key}={value}")
+
+    env_path.write_text("\n".join(new_lines) + "\n", encoding="utf-8")
+
+
 
 
 def format_execution_output(raw_output: str) -> str:
@@ -248,6 +283,35 @@ class RunAgentResponse(BaseModel):
     skill_used: str
 
 
+class ExecuteWorkflowRequest(BaseModel):
+    confirmed: bool = Field(default=False)
+    headless: bool = Field(default=True)
+    timeout_ms: int = Field(default=30000, ge=1000, le=60000)
+    steps: list[PlaywrightStep] = Field(default_factory=list)
+
+
+class ExecuteWorkflowResponse(BaseModel):
+    status: str
+    executed_steps: int
+    duration_ms: int
+    actions: list[dict[str, int | str]] = Field(default_factory=list)
+    artifacts: list[str] = Field(default_factory=list)
+
+
+class ApiKeyUpdateRequest(BaseModel):
+    nvidia_api_key: Optional[str] = Field(default=None, min_length=1)
+    openai_api_key: Optional[str] = Field(default=None, min_length=1)
+    anthropic_api_key: Optional[str] = Field(default=None, min_length=1)
+
+
+class GenerateSkillRequest(BaseModel):
+    prompt: str = Field(min_length=1, description="The generation prompt (role description or repo analysis)")
+
+
+class GenerateSkillResponse(BaseModel):
+    content: str
+
+
 @app.exception_handler(HTTPException)
 async def http_exception_handler(_: Request, exc: HTTPException) -> JSONResponse:
     return JSONResponse(
@@ -262,6 +326,42 @@ async def validation_exception_handler(_: Request, exc: RequestValidationError) 
         status_code=422,
         content={"error": "Validation error", "detail": exc.errors()},
     )
+
+
+@app.post("/settings/api-keys")
+async def update_api_keys(payload: ApiKeyUpdateRequest) -> dict[str, list[str] | str]:
+    global client
+    updates: dict[str, str] = {}
+    if payload.nvidia_api_key:
+        updates["NVIDIA_API_KEY"] = payload.nvidia_api_key.strip()
+    if payload.openai_api_key:
+        updates["OPENAI_API_KEY"] = payload.openai_api_key.strip()
+    if payload.anthropic_api_key:
+        updates["ANTHROPIC_API_KEY"] = payload.anthropic_api_key.strip()
+
+    if not updates:
+        raise HTTPException(status_code=400, detail="No API keys provided")
+
+    try:
+        _update_env_file(updates)
+    except Exception as exc:  # noqa: BLE001
+        logging.getLogger(__name__).exception("Failed to persist API keys")
+        raise HTTPException(status_code=500, detail="Failed to persist API keys") from exc
+
+    for key, value in updates.items():
+        os.environ[key] = value
+
+    if "NVIDIA_API_KEY" in updates:
+        client = OpenAI(
+            base_url="https://integrate.api.nvidia.com/v1",
+            api_key=updates["NVIDIA_API_KEY"],
+        )
+    if "OPENAI_API_KEY" in updates:
+        settings.openai_api_key = updates["OPENAI_API_KEY"]
+    if "ANTHROPIC_API_KEY" in updates:
+        settings.anthropic_api_key = updates["ANTHROPIC_API_KEY"]
+
+    return {"message": "API keys updated", "updated": sorted(updates.keys())}
 
 
 @app.post("/run-agent", response_model=RunAgentResponse)
@@ -300,6 +400,33 @@ async def run_agent(payload: RunAgentRequest) -> RunAgentResponse:
     except Exception as exc:  # noqa: BLE001
         logging.getLogger(__name__).exception("Unexpected error in /run-agent")
         raise HTTPException(status_code=500, detail="Internal server error") from exc
+
+
+@app.post("/execute-workflow", response_model=ExecuteWorkflowResponse)
+async def execute_workflow(payload: ExecuteWorkflowRequest) -> ExecuteWorkflowResponse:
+    if not payload.confirmed:
+        raise HTTPException(
+            status_code=428,
+            detail="User confirmation required. Set confirmed=true to run.",
+        )
+    if not payload.steps:
+        raise HTTPException(status_code=400, detail="At least one step is required")
+
+    try:
+        result = await anyio.to_thread.run_sync(
+            run_playwright_steps,
+            payload.steps,
+            payload.headless,
+            payload.timeout_ms,
+            settings.playwright_user_data_dir,
+            settings.chrome_cdp_url or None,
+        )
+        return ExecuteWorkflowResponse(**result)
+    except PlaywrightExecutionError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except Exception as exc:  # noqa: BLE001
+        logging.getLogger(__name__).exception("Playwright execution failed")
+        raise HTTPException(status_code=500, detail="Execution failed") from exc
 
 
 @app.post("/analyze")

@@ -1,0 +1,18 @@
+2026/05/08-23:57:03.422 4740 Reusing MANIFEST C:\My Experiments\Adaptive-AI\backend\logs\playwright-profile\Default\IndexedDB\https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/08-23:57:03.423 4740 Recovering log #17
+2026/05/08-23:57:03.424 4740 Reusing old log C:\My Experiments\Adaptive-AI\backend\logs\playwright-profile\Default\IndexedDB\https_mail.google.com_0.indexeddb.leveldb/000017.log 
+2026/05/08-23:57:05.206 7450 Compacting 1@0 + 1@1 files
+2026/05/08-23:57:05.234 7450 Generated table #20@0: 977 keys, 1408530 bytes
+2026/05/08-23:57:05.234 7450 Compacted 1@0 + 1@1 files => 1408530 bytes
+2026/05/08-23:57:05.235 7450 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/05/08-23:57:05.236 7450 Delete type=2 #16
+2026/05/08-23:57:05.236 7450 Delete type=2 #18
+2026/05/08-23:57:10.784 4694 Compacting 1@1 + 1@2 files
+2026/05/08-23:57:10.797 4694 Generated table #21@1: 64 keys, 44650 bytes
+2026/05/08-23:57:10.798 4694 Compacted 1@1 + 1@2 files => 44650 bytes
+2026/05/08-23:57:10.799 4694 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/05/08-23:57:10.802 4694 Delete type=2 #14
+2026/05/08-23:57:10.803 4694 Delete type=2 #20
+2026/05/08-23:57:21.976 4c50 Level-0 table #23: started
+2026/05/08-23:57:22.009 4c50 Level-0 table #23: 3156011 bytes OK
+2026/05/08-23:57:22.011 4c50 Delete type=0 #17

@@ -34,13 +34,13 @@ grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/Users/gobzz/SNS Square/adaptive-ai-agent-dashboard/backend/main.py", line 95, in run_agent
+  File "/Users/gobzz/Sns Square/adaptive-ai-agent-dashboard/backend/main.py", line 95, in run_agent
     output = await agent.run(payload.user_input, payload.skill)
-  File "/Users/gobzz/SNS Square/adaptive-ai-agent-dashboard/backend/agent/base_agent.py", line 28, in run
+  File "/Users/gobzz/Sns Square/adaptive-ai-agent-dashboard/backend/agent/base_agent.py", line 28, in run
     output = await self.llm.run(prompt)
-  File "/Users/gobzz/SNS Square/adaptive-ai-agent-dashboard/backend/agent/llm.py", line 45, in run
+  File "/Users/gobzz/Sns Square/adaptive-ai-agent-dashboard/backend/agent/llm.py", line 45, in run
     return self._call_gemini(prompt).strip()
-  File "/Users/gobzz/SNS Square/adaptive-ai-agent-dashboard/backend/agent/llm.py", line 37, in _call_gemini
+  File "/Users/gobzz/Sns Square/adaptive-ai-agent-dashboard/backend/agent/llm.py", line 37, in _call_gemini
     response = model.generate_content(prompt)
   File "/Users/gobzz/Library/Python/3.9/lib/python/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
     response = self._client.generate_content(
@@ -503,3 +503,1162 @@ message: "API key not valid. Please pass a valid API key."
 2026-04-07 15:38:38,566 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
 2026-04-07 15:38:38,574 | INFO | agent.base_agent | Agent run completed for skill=poster_design_agent
 2026-04-07 15:39:43,669 | INFO | main | Adaptive AI Agent backend started
+2026-04-09 22:47:30,190 | INFO | main | Adaptive AI Agent backend started
+2026-04-09 22:50:16,177 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-04-09 22:50:20,002 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-04-10 22:19:52,344 | INFO | main | Adaptive AI Agent backend started
+2026-04-10 22:30:34,043 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-04-10 22:36:02,502 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-04-10 22:52:55,899 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-04-10 22:58:29,646 | INFO | main | Adaptive AI Agent backend started
+2026-04-10 22:58:55,466 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-04-10 22:59:43,568 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-04-10 22:59:43,574 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-04-10 23:07:45,651 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-04-10 23:11:14,266 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-04-10 23:12:48,633 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=ollama
+2026-04-10 23:13:25,524 | INFO | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-04-10 23:13:25,526 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-04-10 23:14:09,416 | INFO | main | Adaptive AI Agent backend started
+2026-04-10 23:20:03,724 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-04-10 23:20:11,367 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-10 23:20:11,426 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-04-10 23:21:04,984 | INFO | main | Adaptive AI Agent backend started
+2026-04-10 23:23:20,218 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-04-10 23:23:23,152 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-10 23:23:23,156 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent
+2026-04-11 09:26:25,167 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 09:28:07,563 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 09:44:44,217 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 09:44:48,903 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 09:44:48,920 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-11 10:03:38,862 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 10:03:42,391 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 10:03:42,398 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-11 10:04:18,922 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 10:04:21,745 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 10:04:21,749 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-11 10:06:30,897 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:10:06,046 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 10:10:09,256 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 10:10:09,283 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-11 10:11:17,190 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 10:11:20,627 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 10:11:20,634 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-11 10:15:34,756 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 10:15:38,568 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 10:15:38,574 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-11 10:16:57,430 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:17:02,762 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:17:06,952 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:17:11,586 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:17:26,223 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:17:36,433 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:17:39,777 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:17:41,271 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 10:17:46,466 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 10:17:46,470 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-11 10:20:12,966 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:20:19,676 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:20:24,393 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:20:51,309 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:20:54,208 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 10:20:58,366 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 10:20:58,384 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-11 10:21:52,862 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 10:21:56,422 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 10:21:56,438 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-11 10:31:48,165 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 10:31:54,339 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 10:31:54,345 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-11 10:33:09,820 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:33:50,027 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 10:33:55,575 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 10:33:55,578 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-11 10:33:57,336 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:37:06,924 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:37:26,084 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:37:34,688 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 10:37:48,026 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 10:37:48,170 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-11 10:39:29,701 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:39:40,504 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:39:50,170 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:39:56,306 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:39:59,807 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 10:46:27,101 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:19:06,089 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 11:19:07,231 | INFO | openai._base_client | Retrying request to /chat/completions in 0.426235 seconds
+2026-04-11 11:19:07,661 | INFO | openai._base_client | Retrying request to /chat/completions in 0.760910 seconds
+2026-04-11 11:21:49,352 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 11:21:56,555 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 11:21:56,947 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-11 11:30:33,742 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:30:33,889 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:30:56,210 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:30:56,581 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:31:03,300 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 11:31:06,680 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 11:31:06,681 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-11 11:33:22,583 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:33:22,583 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:36:06,857 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:36:07,697 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:36:34,820 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:36:35,658 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:36:49,139 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:36:50,187 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:36:52,196 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:38:53,616 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 11:38:59,092 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 11:38:59,161 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-11 11:45:37,568 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:45:37,669 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:45:51,341 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:46:46,419 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:46:46,570 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:47:52,587 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:47:52,656 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:48:47,459 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:48:47,552 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:49:37,509 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:49:37,509 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:49:49,734 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:49:57,149 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:49:57,182 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:49:57,270 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:50:37,725 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-11 11:50:44,444 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 11:50:44,450 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-11 11:52:54,987 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:52:54,996 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:52:55,057 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:55:52,789 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:55:52,821 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:55:52,835 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:57:58,511 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:57:58,514 | INFO | main | Adaptive AI Agent backend started
+2026-04-11 11:57:58,521 | INFO | main | Adaptive AI Agent backend started
+2026-04-14 18:28:14,051 | INFO | main | Adaptive AI Agent backend started
+2026-04-14 18:56:30,989 | INFO | agent.base_agent | Running agent with skill=healthcare_report_simplifier provider=nvidia
+2026-04-14 18:56:36,907 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-14 18:56:36,926 | INFO | agent.base_agent | Agent run completed for skill=healthcare_report_simplifier
+2026-04-14 19:21:54,531 | INFO | main | Adaptive AI Agent backend started
+2026-04-14 19:24:25,646 | INFO | main | Adaptive AI Agent backend started
+2026-04-14 19:35:42,071 | INFO | agent.base_agent | Running agent with skill=medical_report_simplifier provider=nvidia
+2026-04-14 19:35:55,070 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-14 19:35:55,094 | INFO | agent.base_agent | Agent run completed for skill=medical_report_simplifier
+2026-04-14 19:51:47,827 | INFO | main | Adaptive AI Agent backend started
+2026-04-14 20:23:17,028 | INFO | main | Adaptive AI Agent backend started
+2026-04-14 20:30:14,326 | INFO | main | Adaptive AI Agent backend started
+2026-04-14 20:43:11,547 | INFO | main | Adaptive AI Agent backend started
+2026-04-14 20:48:11,490 | INFO | main | Adaptive AI Agent backend started
+2026-04-14 20:54:14,559 | INFO | main | Adaptive AI Agent backend started
+2026-04-14 21:05:07,925 | INFO | main | Adaptive AI Agent backend started
+2026-04-14 21:41:23,010 | INFO | agent.base_agent | Running agent with skill=medical_report_simplifier provider=nvidia
+2026-04-14 21:41:34,884 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-14 21:41:34,922 | INFO | agent.base_agent | Agent run completed for skill=medical_report_simplifier
+2026-04-14 23:02:07,880 | INFO | agent.base_agent | Role scope rejected request for skill=content_writer
+2026-04-14 23:02:51,840 | INFO | agent.base_agent | Running agent with skill=medical_report_simplifier provider=nvidia
+2026-04-14 23:02:57,640 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-14 23:02:57,642 | INFO | agent.base_agent | Agent run completed for skill=medical_report_simplifier
+2026-04-14 23:42:23,700 | INFO | agent.base_agent | Running agent with skill=medical_report_simplifier provider=nvidia
+2026-04-14 23:42:31,809 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-14 23:42:31,811 | INFO | agent.base_agent | Agent run completed for skill=medical_report_simplifier
+2026-04-15 00:03:34,480 | INFO | main | Adaptive AI Agent backend started
+2026-04-15 00:06:00,951 | INFO | agent.base_agent | Running agent with skill=medical_report_simplifier provider=nvidia
+2026-04-15 00:06:12,504 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 00:06:12,520 | INFO | agent.base_agent | Agent run completed for skill=medical_report_simplifier output_len=4882
+2026-04-15 00:12:03,781 | INFO | agent.base_agent | Running agent with skill=medical_report_simplifier provider=nvidia
+2026-04-15 00:12:13,766 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 00:12:13,768 | INFO | agent.base_agent | Agent run completed for skill=medical_report_simplifier output_len=4930
+2026-04-15 00:16:57,138 | INFO | agent.base_agent | Running agent with skill=medical_report_simplifier provider=nvidia
+2026-04-15 00:17:06,949 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 00:17:06,951 | INFO | agent.base_agent | Agent run completed for skill=medical_report_simplifier output_len=5397
+2026-04-15 00:24:21,131 | INFO | main | Adaptive AI Agent backend started
+2026-04-15 00:26:02,013 | INFO | agent.base_agent | Running agent with skill=medical_report_simplifier provider=nvidia
+2026-04-15 00:26:06,889 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 00:26:06,907 | INFO | agent.base_agent | Agent run completed for skill=medical_report_simplifier output_len=1496
+2026-04-15 06:06:48,171 | INFO | agent.base_agent | Running agent with skill=medical_report_simplifier provider=nvidia
+2026-04-15 06:06:59,421 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 06:06:59,430 | INFO | agent.base_agent | Agent run completed for skill=medical_report_simplifier output_len=3278
+2026-04-15 06:09:45,780 | INFO | agent.base_agent | Running agent with skill=medical_report_simplifier provider=nvidia
+2026-04-15 06:10:07,676 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 06:10:07,678 | INFO | agent.base_agent | Agent run completed for skill=medical_report_simplifier output_len=5245
+2026-04-15 06:14:06,656 | INFO | agent.base_agent | Running agent with skill=medical_report_simplifier provider=nvidia
+2026-04-15 06:14:10,424 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 06:14:10,426 | INFO | agent.base_agent | Agent run completed for skill=medical_report_simplifier output_len=1423
+2026-04-15 06:18:20,955 | INFO | agent.base_agent | Running agent with skill=medical_report_simplifier provider=nvidia
+2026-04-15 06:18:24,789 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 06:18:24,791 | INFO | agent.base_agent | Agent run completed for skill=medical_report_simplifier output_len=790
+2026-04-15 06:22:25,650 | INFO | agent.base_agent | Running agent with skill=medical_report_simplifier provider=nvidia
+2026-04-15 06:22:30,061 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 06:22:30,063 | INFO | agent.base_agent | Agent run completed for skill=medical_report_simplifier output_len=611
+2026-04-15 06:28:24,690 | INFO | agent.base_agent | Running agent with skill=medical_report_simplifier provider=nvidia
+2026-04-15 06:28:27,094 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 06:28:27,095 | INFO | agent.base_agent | Agent run completed for skill=medical_report_simplifier output_len=843
+2026-04-15 06:34:49,599 | INFO | agent.base_agent | Running agent with skill=esg_performance_analytics_agent provider=nvidia
+2026-04-15 06:34:52,015 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 06:34:52,016 | INFO | agent.base_agent | Agent run completed for skill=esg_performance_analytics_agent output_len=1049
+2026-04-15 06:39:13,871 | INFO | agent.base_agent | Running agent with skill=esg_performance_analytics_agent provider=nvidia
+2026-04-15 06:39:18,049 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 06:39:18,050 | INFO | agent.base_agent | Agent run completed for skill=esg_performance_analytics_agent output_len=2168
+2026-04-15 06:42:26,069 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-04-15 06:42:28,678 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 06:42:28,680 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent output_len=1425
+2026-04-15 09:25:36,164 | INFO | agent.base_agent | Running agent with skill=medical_report_simplifier provider=nvidia
+2026-04-15 09:25:40,108 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 09:25:40,110 | INFO | agent.base_agent | Agent run completed for skill=medical_report_simplifier output_len=717
+2026-04-15 10:18:00,606 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-04-15 10:18:08,828 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 10:18:08,831 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent output_len=1426
+2026-04-15 10:19:07,984 | INFO | agent.base_agent | Running agent with skill=marketing provider=nvidia
+2026-04-15 10:19:12,224 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 10:19:12,227 | INFO | agent.base_agent | Agent run completed for skill=marketing output_len=1021
+2026-04-15 10:50:16,472 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-04-15 10:50:18,905 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 10:50:18,908 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent output_len=475
+2026-04-15 10:50:37,003 | INFO | agent.base_agent | Role scope rejected request for skill=code_debug_agent
+2026-04-15 10:53:11,740 | INFO | agent.base_agent | Running agent with skill=poster_design_agent provider=nvidia
+2026-04-15 10:53:14,333 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 10:53:14,439 | INFO | agent.base_agent | Agent run completed for skill=poster_design_agent output_len=1066
+2026-04-15 10:53:32,849 | INFO | agent.base_agent | Running agent with skill=poster_design_agent provider=nvidia
+2026-04-15 10:53:33,746 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 10:53:33,750 | INFO | agent.base_agent | Agent run completed for skill=poster_design_agent output_len=29
+2026-04-15 10:54:00,454 | INFO | agent.base_agent | Running agent with skill=poster_design_agent provider=nvidia
+2026-04-15 10:54:02,931 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 10:54:02,934 | INFO | agent.base_agent | Agent run completed for skill=poster_design_agent output_len=1132
+2026-04-15 12:32:43,057 | INFO | main | Adaptive AI Agent backend started
+2026-04-15 16:37:21,998 | INFO | agent.base_agent | Running agent with skill=medical_report_simplifier provider=nvidia
+2026-04-15 16:37:26,173 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-15 16:37:26,188 | INFO | agent.base_agent | Agent run completed for skill=medical_report_simplifier output_len=767
+2026-04-16 10:43:06,940 | INFO | agent.base_agent | Running agent with skill=email_outreach_agent provider=nvidia
+2026-04-16 10:43:10,376 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-16 10:43:10,390 | INFO | agent.base_agent | Agent run completed for skill=email_outreach_agent output_len=266
+2026-04-17 09:13:11,183 | INFO | main | Adaptive AI Agent backend started
+2026-04-17 18:51:33,979 | INFO | main | Adaptive AI Agent backend started
+2026-04-18 00:45:44,816 | INFO | main | Adaptive AI Agent backend started
+2026-04-18 00:45:50,640 | INFO | main | Adaptive AI Agent backend started
+2026-04-18 00:47:03,432 | INFO | main | Adaptive AI Agent backend started
+2026-04-18 00:58:58,913 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-04-18 00:59:03,983 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-18 00:59:03,991 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=821
+2026-04-18 01:04:01,510 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-04-18 01:04:04,477 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-18 01:04:04,481 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=814
+2026-04-18 09:16:27,053 | INFO | main | Adaptive AI Agent backend started
+2026-04-18 09:21:11,867 | INFO | main | Adaptive AI Agent backend started
+2026-04-18 09:22:52,285 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-04-18 09:22:56,991 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-18 09:22:57,007 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=872
+2026-04-18 09:58:27,420 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-04-18 09:58:33,422 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-18 09:58:33,425 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=895
+2026-04-18 09:59:34,558 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-04-18 09:59:38,862 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-18 09:59:38,866 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=890
+2026-04-18 10:07:57,205 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-04-18 10:08:01,431 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-18 10:08:01,433 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=860
+2026-04-20 12:51:26,406 | INFO | main | Adaptive AI Agent backend started
+2026-04-20 12:56:46,394 | ERROR | main | Playwright execution failed
+Traceback (most recent call last):
+  File "C:\My Experiments\Adaptive-AI\backend\main.py", line 408, in execute_workflow
+    result = await anyio.to_thread.run_sync(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "C:\My Experiments\Adaptive-AI\backend\agent\playwright_executor.py", line 140, in run_playwright_steps
+    browser = p.chromium.connect_over_cdp(cdp_url)
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 14969, in connect_over_cdp
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.connect_over_cdp(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_browser_type.py", line 206, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "connectOverCDP", TimeoutSettings.launch_timeout, params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Unexpected token '<', "<!doctype "... is not valid JSON
+Call log:
+  - <ws preparing> retrieving websocket url from https://mail.google.com/mail/u/0/#inbox
+
+2026-04-20 13:04:06,831 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-04-20 13:06:46,486 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-20 13:06:46,509 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=863
+2026-04-20 14:59:56,543 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-04-20 15:00:00,744 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-20 15:00:00,752 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=870
+2026-04-20 15:00:12,835 | ERROR | main | Playwright execution failed
+Traceback (most recent call last):
+  File "C:\My Experiments\Adaptive-AI\backend\main.py", line 408, in execute_workflow
+    result = await anyio.to_thread.run_sync(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "C:\My Experiments\Adaptive-AI\backend\agent\playwright_executor.py", line 140, in run_playwright_steps
+    browser = p.chromium.connect_over_cdp(cdp_url)
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 14969, in connect_over_cdp
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.connect_over_cdp(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_browser_type.py", line 206, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "connectOverCDP", TimeoutSettings.launch_timeout, params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Unexpected token '<', "<!doctype "... is not valid JSON
+Call log:
+  - <ws preparing> retrieving websocket url from https://mail.google.com/mail/u/0/#inbox
+
+2026-04-20 15:04:28,333 | INFO | main | Adaptive AI Agent backend started
+2026-04-20 15:05:22,851 | INFO | main | Adaptive AI Agent backend started
+2026-04-20 15:07:25,506 | INFO | main | Adaptive AI Agent backend started
+2026-04-20 15:07:55,551 | INFO | main | Adaptive AI Agent backend started
+2026-04-20 15:18:11,289 | INFO | main | Adaptive AI Agent backend started
+2026-04-20 15:18:45,667 | INFO | main | Adaptive AI Agent backend started
+2026-04-20 15:27:08,269 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-04-20 15:27:17,803 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-20 15:27:17,830 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=872
+2026-04-20 15:30:01,848 | INFO | main | Adaptive AI Agent backend started
+2026-04-20 15:31:21,290 | INFO | main | Adaptive AI Agent backend started
+2026-04-21 13:07:29,288 | INFO | main | Adaptive AI Agent backend started
+2026-05-02 22:12:49,054 | INFO | main | Adaptive AI Agent backend started
+2026-05-02 22:15:51,848 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-05-02 22:16:00,288 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 22:16:00,312 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent output_len=730
+2026-05-02 22:16:54,904 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-05-02 22:16:57,098 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 22:16:57,100 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent output_len=672
+2026-05-02 22:20:09,364 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-02 22:20:12,928 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 22:20:12,931 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=903
+2026-05-02 22:23:30,907 | INFO | main | Adaptive AI Agent backend started
+2026-05-02 22:47:07,049 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-02 22:47:11,336 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 22:47:11,361 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=907
+2026-05-02 22:57:28,415 | INFO | main | Adaptive AI Agent backend started
+2026-05-02 23:00:50,549 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-02 23:00:54,317 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-02 23:00:54,333 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=888
+2026-05-03 14:47:46,146 | INFO | main | Adaptive AI Agent backend started
+2026-05-03 19:24:51,417 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-03 19:25:01,906 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-03 19:25:01,922 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=859
+2026-05-03 21:58:27,177 | ERROR | main | Playwright execution failed
+Traceback (most recent call last):
+  File "C:\My Experiments\Adaptive-AI\backend\main.py", line 408, in execute_workflow
+    result = await anyio.to_thread.run_sync(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "C:\My Experiments\Adaptive-AI\backend\agent\playwright_executor.py", line 319, in run_playwright_steps
+    with sync_playwright() as p:
+         ~~~~~~~~~~~~~~~^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\sync_api\_context_manager.py", line 79, in __enter__
+    playwright = self._playwright
+                 ^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightContextManager' object has no attribute '_playwright'
+2026-05-03 21:58:27,554 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='Task-37' coro=<Connection.run.<locals>.init() done, defined at C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py:309> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 310, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 251, in initialize
+    await self._channel.send(
+    ...<5 lines>...
+    )
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-05-03 21:58:31,034 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 16:41:51,269 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 17:11:18,842 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-04 17:11:27,937 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-04 17:11:28,161 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=839
+2026-05-04 17:16:25,871 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 17:36:07,760 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 17:38:01,806 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-04 17:38:13,561 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-04 17:38:13,582 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=854
+2026-05-04 17:46:36,554 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-04 17:46:40,574 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-04 17:46:40,577 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=839
+2026-05-04 18:10:38,809 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 18:11:25,219 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-04 18:11:30,685 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-04 18:11:30,709 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=839
+2026-05-04 18:29:40,566 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 18:29:59,173 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 18:31:22,219 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 18:48:24,141 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-04 18:48:31,227 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-04 18:48:31,251 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=1311
+2026-05-04 18:48:45,676 | INFO | agent.playwright_executor | Step 1: goto
+2026-05-04 18:48:49,639 | INFO | agent.playwright_executor | Step 2: wait_for_timeout
+2026-05-04 18:48:59,657 | INFO | agent.playwright_executor | Step 3: wait_for_selector
+2026-05-04 18:49:14,677 | INFO | agent.playwright_executor | Step 3 timed out during wait_for_selector. Retrying once.
+2026-05-04 18:52:52,093 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 18:53:15,173 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 18:54:20,782 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 18:54:22,015 | INFO | agent.playwright_executor | Step 1: goto
+2026-05-04 18:54:44,627 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-04 18:54:55,210 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-04 18:54:55,226 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=1262
+2026-05-04 18:55:25,052 | INFO | agent.playwright_executor | Step 1: goto
+2026-05-04 19:03:09,937 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 19:03:24,203 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 19:03:53,955 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 19:04:23,841 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 19:05:16,226 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 19:06:03,733 | INFO | main | Adaptive AI Agent backend started
+2026-05-04 19:06:08,535 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-04 19:06:12,561 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-04 19:06:12,572 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=1252
+2026-05-04 19:06:21,815 | INFO | agent.playwright_executor | Step 1: goto
+2026-05-06 14:49:53,279 | INFO | main | Adaptive AI Agent backend started
+2026-05-06 14:51:50,734 | INFO | agent.playwright_executor | Step 1: goto
+2026-05-06 14:52:48,508 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-06 14:53:08,785 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-06 14:53:08,805 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=280
+2026-05-06 14:53:28,380 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-06 14:53:59,459 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-06 14:53:59,483 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=1216
+2026-05-06 14:54:11,171 | INFO | agent.playwright_executor | Step 1: goto
+2026-05-06 14:55:56,319 | INFO | agent.playwright_executor | Step 1: goto
+2026-05-06 15:05:54,961 | INFO | main | Adaptive AI Agent backend started
+2026-05-06 15:57:42,625 | INFO | agent.playwright_executor | Step 1: goto
+2026-05-06 15:58:39,340 | INFO | agent.playwright_executor | Step 1: goto
+2026-05-06 16:09:06,813 | INFO | main | Adaptive AI Agent backend started
+2026-05-06 16:09:36,930 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-06 16:09:47,705 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-06 16:09:47,727 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=1224
+2026-05-06 16:09:56,964 | INFO | agent.playwright_executor | Step 1: goto
+2026-05-06 16:12:57,821 | WARNING | agent.playwright_executor | Gmail selector wait timed out | Current URL: https://mail.google.com/mail/u/0/#inbox
+2026-05-06 16:12:59,154 | WARNING | agent.playwright_executor | Debug screenshot saved: C:\My Experiments\Adaptive-AI\backend\logs\executions\gmail_debug_1778064177822.png
+2026-05-06 16:12:59,156 | INFO | agent.playwright_executor | Retrying Gmail inbox detection after networkidle...
+2026-05-06 16:16:16,630 | WARNING | agent.playwright_executor | Gmail selector wait timed out | Current URL: https://mail.google.com/mail/u/0/#inbox
+2026-05-06 16:16:18,900 | WARNING | agent.playwright_executor | Debug screenshot saved: C:\My Experiments\Adaptive-AI\backend\logs\executions\gmail_debug_1778064376631.png
+2026-05-07 16:01:09,128 | INFO | main | Adaptive AI Agent backend started
+2026-05-07 16:26:14,092 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-05-07 16:26:26,424 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-07 16:26:26,453 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent output_len=1630
+2026-05-07 16:30:18,526 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-05-07 16:30:23,946 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-07 16:30:23,948 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent output_len=2253
+2026-05-07 16:35:19,306 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-05-07 16:35:22,202 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-07 16:35:22,204 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent output_len=1374
+2026-05-07 16:40:31,043 | INFO | main | Adaptive AI Agent backend started
+2026-05-07 16:43:24,355 | INFO | main | Adaptive AI Agent backend started
+2026-05-07 16:46:29,645 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-05-07 16:46:35,806 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-07 16:46:35,828 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent output_len=1808
+2026-05-07 16:52:25,470 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-05-07 16:52:29,558 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-07 16:52:29,560 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent output_len=1647
+2026-05-07 16:53:15,346 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-05-07 16:53:18,858 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-07 16:53:18,860 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent output_len=29
+2026-05-07 16:53:27,008 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-05-07 16:53:30,225 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-07 16:53:30,228 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent output_len=1485
+2026-05-07 16:54:07,983 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-05-07 16:54:10,777 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-07 16:54:10,780 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent output_len=1154
+2026-05-07 16:56:04,665 | INFO | main | Adaptive AI Agent backend started
+2026-05-07 16:56:29,595 | INFO | main | Adaptive AI Agent backend started
+2026-05-07 16:56:57,876 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-05-07 16:57:02,295 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-07 16:57:02,316 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent output_len=2166
+2026-05-07 16:57:47,052 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-05-07 16:57:50,317 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-07 16:57:50,320 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent output_len=1774
+2026-05-07 16:58:48,637 | INFO | agent.base_agent | Running agent with skill=code_debug_agent provider=nvidia
+2026-05-07 16:58:52,475 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-07 16:58:52,477 | INFO | agent.base_agent | Agent run completed for skill=code_debug_agent output_len=2054
+2026-05-07 16:59:05,944 | INFO | agent.base_agent | Running agent with skill=an_aipowered_assistant_that provider=nvidia
+2026-05-07 16:59:09,064 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-07 16:59:09,065 | INFO | agent.base_agent | Agent run completed for skill=an_aipowered_assistant_that output_len=1561
+2026-05-08 23:23:59,938 | INFO | main | Adaptive AI Agent backend started
+2026-05-08 23:25:54,558 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-08 23:26:03,320 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-08 23:26:03,334 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=1201
+2026-05-08 23:26:11,832 | ERROR | main | Playwright execution failed
+Traceback (most recent call last):
+  File "C:\My Experiments\Adaptive-AI\backend\main.py", line 416, in execute_workflow
+    result = await anyio.to_thread.run_sync(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\to_thread.py", line 33, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, *args, cancellable=cancellable, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\_backends\_asyncio.py", line 877, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\_backends\_asyncio.py", line 807, in run
+    result = context.run(func, *args)
+  File "C:\My Experiments\Adaptive-AI\backend\agent\playwright_executor.py", line 437, in run_playwright_steps
+    with sync_playwright() as p:
+         ~~~~~~~~~~~~~~~^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\sync_api\_context_manager.py", line 77, in __enter__
+    dispatcher_fiber.switch()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\sync_api\_context_manager.py", line 56, in greenlet_main
+    self._loop.run_until_complete(self._connection.run_as_sync())
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_connection.py", line 303, in run_as_sync
+    await self.run()
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_connection.py", line 312, in run
+    await self._transport.connect()
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_transport.py", line 133, in connect
+    raise exc
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_transport.py", line 120, in connect
+    self._proc = await asyncio.create_subprocess_exec(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\asyncio\subprocess.py", line 224, in create_subprocess_exec
+    transport, protocol = await loop.subprocess_exec(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        stderr=stderr, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 1798, in subprocess_exec
+    transport = await self._make_subprocess_transport(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        protocol, popen_args, False, stdin, stdout, stderr,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bufsize, **kwargs)
+        ^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 533, in _make_subprocess_transport
+    raise NotImplementedError
+NotImplementedError
+2026-05-08 23:26:14,049 | ERROR | main | Playwright execution failed
+Traceback (most recent call last):
+  File "C:\My Experiments\Adaptive-AI\backend\main.py", line 416, in execute_workflow
+    result = await anyio.to_thread.run_sync(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\to_thread.py", line 33, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, *args, cancellable=cancellable, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\_backends\_asyncio.py", line 877, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\_backends\_asyncio.py", line 807, in run
+    result = context.run(func, *args)
+  File "C:\My Experiments\Adaptive-AI\backend\agent\playwright_executor.py", line 437, in run_playwright_steps
+    with sync_playwright() as p:
+         ~~~~~~~~~~~~~~~^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\sync_api\_context_manager.py", line 77, in __enter__
+    dispatcher_fiber.switch()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\sync_api\_context_manager.py", line 56, in greenlet_main
+    self._loop.run_until_complete(self._connection.run_as_sync())
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_connection.py", line 303, in run_as_sync
+    await self.run()
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_connection.py", line 312, in run
+    await self._transport.connect()
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_transport.py", line 133, in connect
+    raise exc
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_transport.py", line 120, in connect
+    self._proc = await asyncio.create_subprocess_exec(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\asyncio\subprocess.py", line 224, in create_subprocess_exec
+    transport, protocol = await loop.subprocess_exec(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        stderr=stderr, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 1798, in subprocess_exec
+    transport = await self._make_subprocess_transport(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        protocol, popen_args, False, stdin, stdout, stderr,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bufsize, **kwargs)
+        ^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 533, in _make_subprocess_transport
+    raise NotImplementedError
+NotImplementedError
+2026-05-08 23:26:15,216 | ERROR | main | Playwright execution failed
+Traceback (most recent call last):
+  File "C:\My Experiments\Adaptive-AI\backend\main.py", line 416, in execute_workflow
+    result = await anyio.to_thread.run_sync(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\to_thread.py", line 33, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, *args, cancellable=cancellable, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\_backends\_asyncio.py", line 877, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\_backends\_asyncio.py", line 807, in run
+    result = context.run(func, *args)
+  File "C:\My Experiments\Adaptive-AI\backend\agent\playwright_executor.py", line 437, in run_playwright_steps
+    with sync_playwright() as p:
+         ~~~~~~~~~~~~~~~^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\sync_api\_context_manager.py", line 77, in __enter__
+    dispatcher_fiber.switch()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\sync_api\_context_manager.py", line 56, in greenlet_main
+    self._loop.run_until_complete(self._connection.run_as_sync())
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_connection.py", line 303, in run_as_sync
+    await self.run()
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_connection.py", line 312, in run
+    await self._transport.connect()
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_transport.py", line 133, in connect
+    raise exc
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_transport.py", line 120, in connect
+    self._proc = await asyncio.create_subprocess_exec(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\asyncio\subprocess.py", line 224, in create_subprocess_exec
+    transport, protocol = await loop.subprocess_exec(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        stderr=stderr, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 1798, in subprocess_exec
+    transport = await self._make_subprocess_transport(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        protocol, popen_args, False, stdin, stdout, stderr,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bufsize, **kwargs)
+        ^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 533, in _make_subprocess_transport
+    raise NotImplementedError
+NotImplementedError
+2026-05-08 23:27:24,067 | ERROR | asyncio | Future exception was never retrieved
+future: <Future finished exception=NotImplementedError()>
+Traceback (most recent call last):
+  File "C:\My Experiments\Adaptive-AI\backend\main.py", line 416, in execute_workflow
+    result = await anyio.to_thread.run_sync(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\to_thread.py", line 33, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, *args, cancellable=cancellable, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\_backends\_asyncio.py", line 877, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\_backends\_asyncio.py", line 807, in run
+    result = context.run(func, *args)
+  File "C:\My Experiments\Adaptive-AI\backend\agent\playwright_executor.py", line 437, in run_playwright_steps
+    actions_log: list[dict[str, Any]] = []
+         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\sync_api\_context_manager.py", line 77, in __enter__
+    dispatcher_fiber.switch()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\sync_api\_context_manager.py", line 56, in greenlet_main
+    self._loop.run_until_complete(self._connection.run_as_sync())
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_connection.py", line 303, in run_as_sync
+    await self.run()
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_connection.py", line 312, in run
+    await self._transport.connect()
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_transport.py", line 133, in connect
+    raise exc
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_transport.py", line 120, in connect
+    self._proc = await asyncio.create_subprocess_exec(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\asyncio\subprocess.py", line 224, in create_subprocess_exec
+    transport, protocol = await loop.subprocess_exec(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        stderr=stderr, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 1798, in subprocess_exec
+    transport = await self._make_subprocess_transport(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        protocol, popen_args, False, stdin, stdout, stderr,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bufsize, **kwargs)
+        ^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 533, in _make_subprocess_transport
+    raise NotImplementedError
+NotImplementedError
+2026-05-08 23:27:24,075 | ERROR | asyncio | Future exception was never retrieved
+future: <Future finished exception=NotImplementedError()>
+Traceback (most recent call last):
+  File "C:\My Experiments\Adaptive-AI\backend\main.py", line 416, in execute_workflow
+    result = await anyio.to_thread.run_sync(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\to_thread.py", line 33, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, *args, cancellable=cancellable, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\_backends\_asyncio.py", line 877, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\_backends\_asyncio.py", line 807, in run
+    result = context.run(func, *args)
+  File "C:\My Experiments\Adaptive-AI\backend\agent\playwright_executor.py", line 437, in run_playwright_steps
+    actions_log: list[dict[str, Any]] = []
+         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\sync_api\_context_manager.py", line 77, in __enter__
+    dispatcher_fiber.switch()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\sync_api\_context_manager.py", line 56, in greenlet_main
+    self._loop.run_until_complete(self._connection.run_as_sync())
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_connection.py", line 303, in run_as_sync
+    await self.run()
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_connection.py", line 312, in run
+    await self._transport.connect()
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_transport.py", line 133, in connect
+    raise exc
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_transport.py", line 120, in connect
+    self._proc = await asyncio.create_subprocess_exec(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\asyncio\subprocess.py", line 224, in create_subprocess_exec
+    transport, protocol = await loop.subprocess_exec(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        stderr=stderr, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 1798, in subprocess_exec
+    transport = await self._make_subprocess_transport(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        protocol, popen_args, False, stdin, stdout, stderr,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bufsize, **kwargs)
+        ^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 533, in _make_subprocess_transport
+    raise NotImplementedError
+NotImplementedError
+2026-05-08 23:27:24,082 | ERROR | asyncio | Future exception was never retrieved
+future: <Future finished exception=NotImplementedError()>
+Traceback (most recent call last):
+  File "C:\My Experiments\Adaptive-AI\backend\main.py", line 416, in execute_workflow
+    result = await anyio.to_thread.run_sync(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\to_thread.py", line 33, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, *args, cancellable=cancellable, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\_backends\_asyncio.py", line 877, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\anyio\_backends\_asyncio.py", line 807, in run
+    result = context.run(func, *args)
+  File "C:\My Experiments\Adaptive-AI\backend\agent\playwright_executor.py", line 437, in run_playwright_steps
+    actions_log: list[dict[str, Any]] = []
+         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\sync_api\_context_manager.py", line 77, in __enter__
+    dispatcher_fiber.switch()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\sync_api\_context_manager.py", line 56, in greenlet_main
+    self._loop.run_until_complete(self._connection.run_as_sync())
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_connection.py", line 303, in run_as_sync
+    await self.run()
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_connection.py", line 312, in run
+    await self._transport.connect()
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_transport.py", line 133, in connect
+    raise exc
+  File "C:\Users\gobin\AppData\Roaming\Python\Python314\site-packages\playwright\_impl\_transport.py", line 120, in connect
+    self._proc = await asyncio.create_subprocess_exec(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\asyncio\subprocess.py", line 224, in create_subprocess_exec
+    transport, protocol = await loop.subprocess_exec(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        stderr=stderr, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 1798, in subprocess_exec
+    transport = await self._make_subprocess_transport(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        protocol, popen_args, False, stdin, stdout, stderr,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bufsize, **kwargs)
+        ^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 533, in _make_subprocess_transport
+    raise NotImplementedError
+NotImplementedError
+2026-05-08 23:27:26,572 | INFO | main | Adaptive AI Agent backend started
+2026-05-08 23:27:27,144 | INFO | main | Adaptive AI Agent backend started
+2026-05-08 23:29:21,776 | INFO | main | Adaptive AI Agent backend started
+2026-05-08 23:35:55,606 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-08 23:36:03,878 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-08 23:36:03,897 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=1213
+2026-05-08 23:36:28,042 | INFO | agent.playwright_executor | Step 1: goto
+2026-05-08 23:38:36,304 | WARNING | agent.playwright_executor | Gmail selector wait timed out | Current URL: https://mail.google.com/mail/u/0/#inbox
+2026-05-08 23:38:36,309 | WARNING | agent.playwright_executor | Could not capture debug snapshot.
+Traceback (most recent call last):
+  File "C:\My Experiments\Adaptive-AI\backend\agent\playwright_executor.py", line 280, in _capture_debug_snapshot
+    page.screenshot(path=str(snap_path), full_page=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9819, in screenshot
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.screenshot(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<13 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_page.py", line 814, in screenshot
+    encoded_binary = await self._channel.send(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+        "screenshot", self._timeout_settings.timeout, params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.screenshot: Target page, context or browser has been closed
+2026-05-08 23:38:36,314 | INFO | agent.playwright_executor | Retrying Gmail inbox detection after networkidle...
+2026-05-08 23:39:36,344 | WARNING | agent.playwright_executor | Gmail selector wait timed out | Current URL: https://mail.google.com/mail/u/0/#inbox
+2026-05-08 23:39:36,346 | WARNING | agent.playwright_executor | Could not capture debug snapshot.
+Traceback (most recent call last):
+  File "C:\My Experiments\Adaptive-AI\backend\agent\playwright_executor.py", line 280, in _capture_debug_snapshot
+    page.screenshot(path=str(snap_path), full_page=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9819, in screenshot
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.screenshot(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<13 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_page.py", line 814, in screenshot
+    encoded_binary = await self._channel.send(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+        "screenshot", self._timeout_settings.timeout, params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.screenshot: Target page, context or browser has been closed
+2026-05-08 23:45:42,612 | INFO | main | Adaptive AI Agent backend started
+2026-05-08 23:46:05,212 | INFO | agent.playwright_executor | Step 1: goto
+2026-05-08 23:47:01,704 | WARNING | agent.playwright_executor | Gmail selector wait timed out | Current URL: https://mail.google.com/mail/u/0/#inbox
+2026-05-08 23:47:01,707 | WARNING | agent.playwright_executor | Could not capture debug snapshot.
+Traceback (most recent call last):
+  File "C:\My Experiments\Adaptive-AI\backend\agent\playwright_executor.py", line 280, in _capture_debug_snapshot
+    page.screenshot(path=str(snap_path), full_page=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9819, in screenshot
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.screenshot(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<13 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_page.py", line 814, in screenshot
+    encoded_binary = await self._channel.send(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+        "screenshot", self._timeout_settings.timeout, params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.screenshot: Target page, context or browser has been closed
+2026-05-08 23:47:01,709 | INFO | agent.playwright_executor | Retrying Gmail inbox detection after networkidle...
+2026-05-08 23:47:13,756 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-08 23:47:34,551 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-08 23:47:34,557 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=1046
+2026-05-08 23:48:00,505 | INFO | agent.playwright_executor | Step 1: goto
+2026-05-08 23:48:01,726 | WARNING | agent.playwright_executor | Gmail selector wait timed out | Current URL: https://mail.google.com/mail/u/0/#inbox
+2026-05-08 23:48:01,731 | WARNING | agent.playwright_executor | Could not capture debug snapshot.
+Traceback (most recent call last):
+  File "C:\My Experiments\Adaptive-AI\backend\agent\playwright_executor.py", line 280, in _capture_debug_snapshot
+    page.screenshot(path=str(snap_path), full_page=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9819, in screenshot
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.screenshot(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<13 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_page.py", line 814, in screenshot
+    encoded_binary = await self._channel.send(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+        "screenshot", self._timeout_settings.timeout, params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.screenshot: Target page, context or browser has been closed
+2026-05-08 23:50:53,658 | WARNING | agent.playwright_executor | Gmail selector wait timed out | Current URL: https://mail.google.com/mail/u/0/#inbox
+2026-05-08 23:50:53,663 | WARNING | agent.playwright_executor | Could not capture debug snapshot.
+Traceback (most recent call last):
+  File "C:\My Experiments\Adaptive-AI\backend\agent\playwright_executor.py", line 280, in _capture_debug_snapshot
+    page.screenshot(path=str(snap_path), full_page=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9819, in screenshot
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.screenshot(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<13 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_page.py", line 814, in screenshot
+    encoded_binary = await self._channel.send(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+        "screenshot", self._timeout_settings.timeout, params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.screenshot: Target page, context or browser has been closed
+2026-05-08 23:50:53,666 | INFO | agent.playwright_executor | Retrying Gmail inbox detection after networkidle...
+2026-05-08 23:51:53,695 | WARNING | agent.playwright_executor | Gmail selector wait timed out | Current URL: https://mail.google.com/mail/u/0/#inbox
+2026-05-08 23:51:53,699 | WARNING | agent.playwright_executor | Could not capture debug snapshot.
+Traceback (most recent call last):
+  File "C:\My Experiments\Adaptive-AI\backend\agent\playwright_executor.py", line 280, in _capture_debug_snapshot
+    page.screenshot(path=str(snap_path), full_page=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9819, in screenshot
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.screenshot(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<13 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_page.py", line 814, in screenshot
+    encoded_binary = await self._channel.send(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+        "screenshot", self._timeout_settings.timeout, params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\My Experiments\Adaptive-AI\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.screenshot: Target page, context or browser has been closed
+2026-05-08 23:51:56,810 | INFO | main | Adaptive AI Agent backend started
+2026-05-08 23:54:46,983 | INFO | main | Adaptive AI Agent backend started
+2026-05-08 23:56:21,440 | INFO | agent.base_agent | Running agent with skill=workflow_execution_automation_agent provider=nvidia
+2026-05-08 23:56:43,821 | INFO | httpx | HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-08 23:56:43,826 | INFO | agent.base_agent | Agent run completed for skill=workflow_execution_automation_agent output_len=1106

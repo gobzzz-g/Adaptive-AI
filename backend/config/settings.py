@@ -17,6 +17,7 @@ class Settings(BaseSettings):
 
     llm_provider: str = Field(default="openai", alias="LLM_PROVIDER")
     openai_api_key: str = Field(default="", alias="OPENAI_API_KEY")
+    anthropic_api_key: str = Field(default="", alias="ANTHROPIC_API_KEY")
     gemini_api_key: str = Field(default="", alias="GEMINI_API_KEY")
     minimax_api_key: str = Field(default="", alias="MINIMAX_API_KEY")
 
@@ -29,6 +30,11 @@ class Settings(BaseSettings):
 
     skills_dir: str = Field(default=str(BASE_DIR / "skills"), alias="SKILLS_DIR")
     log_file: str = Field(default=str(BASE_DIR / "logs" / "agent_runs.log"), alias="LOG_FILE")
+    playwright_user_data_dir: str = Field(
+        default=str(BASE_DIR / "logs" / "playwright-profile"),
+        alias="PLAYWRIGHT_USER_DATA_DIR",
+    )
+    chrome_cdp_url: str = Field(default="", alias="CHROME_CDP_URL")
 
 
 @lru_cache

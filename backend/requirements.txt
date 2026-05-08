@@ -11,3 +11,6 @@ pypdf>=4.2.0
 pillow>=10.3.0
 pytesseract>=0.3.10
 pymupdf
+playwright>=1.45.0
+selenium>=4.22.0
+webdriver-manager>=4.0.2
